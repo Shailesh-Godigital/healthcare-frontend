@@ -22,23 +22,21 @@ import { Label } from "@/components/ui/label";
 import axios from "axios";
 
 export default function Register() {
-  const [firstname, setFirstname] = useState<string>("");
-  const [lastname, setLastname] = useState<string>("");
+  const [firstName, setFirstname] = useState<string>("");
+  const [lastName, setLastname] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [otp, setOtp] = useState<string>();
 
   const [isButtonDisabled, setButtonDisabled] = useState<boolean>(false);
   const [isDialogBox, setDialogBox] = useState<boolean>(false);
 
-  const handlesubmit = (e: FormEvent) => {
-    e.preventDefault();
-    alert("hillo");
-  };
-  const sendOTP = async () => {
+  const OTPUtility = async (route: string, bodydata: Object) => {
     return new Promise(async (resolve, reject) => {
       try {
         const response = await axios.post(
-          `${process.env.REACT_APP_BASE_URL}/api/v1/send-otp`
+          `http://localhost:5000/api/v1/${route}`,
+          bodydata
         );
         resolve(response);
       } catch (error) {
@@ -46,16 +44,35 @@ export default function Register() {
       }
     });
   };
-  const handleOTP = async (e: FormEvent) => {
+  const handleSendOTP = async (e: FormEvent) => {
     e.preventDefault();
-    if (!firstname || !lastname || !password || !email) {
-      toast.error("Please fill the required fields");
+
+    //validation
+    if (!firstName || !lastName || !password || !email) {
+      toast.error("Please fill all the fields");
+      return;
+    }
+    if (!validateEmail(email)) {
+      toast("Invalid Email formate", {
+        icon: "❗",
+      });
+      return;
+    }
+    if (!validatePassword(password)) {
+      toast(
+        "Password must have at least 8 characters, one uppercase letter, one lowercase letter, one digit and one special character",
+        {
+          duration: 4000,
+          icon: "❗",
+        }
+      );
       return;
     }
 
+    //actual logic
     setButtonDisabled(true);
     try {
-      await toast.promise(sendOTP(), {
+      await toast.promise(OTPUtility("send-otp", { email }), {
         loading: "Sending OTP",
         success: <b>OTP sent!</b>,
         error: <b>OTP not sent</b>,
@@ -67,8 +84,26 @@ export default function Register() {
       setButtonDisabled(false);
     }
   };
-  const handleVerifyOTP = () => {
-    setDialogBox(false);
+  const handleVerifyOTP = async (e: FormEvent) => {
+    e.preventDefault();
+    setButtonDisabled(true);
+    try {
+      await toast.promise(
+        OTPUtility("verify-otp", { email, otp, firstName, lastName, password }),
+        {
+          loading: "Verifying OTP",
+          success: <b>OTP Verified</b>,
+          error: <b>OTP Invalid</b>,
+        }
+      );
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 1000);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setButtonDisabled(false);
+    }
   };
   return (
     <>
@@ -85,26 +120,26 @@ export default function Register() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handlesubmit}>
+            <form>
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-row gap-10">
                   <div className="flex flex-col space-y-1.5">
-                    <Label htmlFor="firstname">First Name</Label>
+                    <Label htmlFor="firstName">First Name</Label>
                     <Input
-                      id="firstname"
+                      id="firstName"
                       placeholder="Enter your First Name"
                       onChange={(e) => setFirstname(e.target.value)}
-                      value={firstname}
+                      value={firstName}
                       required
                     />
                   </div>
                   <div className="flex flex-col space-y-1.5">
-                    <Label htmlFor="lastname">Last Name</Label>
+                    <Label htmlFor="lastName">Last Name</Label>
                     <Input
-                      id="lastname"
+                      id="lastName"
                       placeholder="Enter your Last Name"
                       onChange={(e) => setLastname(e.target.value)}
-                      value={lastname}
+                      value={lastName}
                       required
                     />
                   </div>
@@ -136,7 +171,7 @@ export default function Register() {
           </CardContent>
 
           <CardFooter className="flex justify-between">
-            <Button onClick={handleOTP} disabled={isButtonDisabled}>
+            <Button onClick={handleSendOTP} disabled={isButtonDisabled}>
               get OTP
             </Button>
           </CardFooter>
@@ -157,10 +192,26 @@ export default function Register() {
             <DialogTitle>Enter OTP</DialogTitle>
             <DialogDescription>Please enter OTP here</DialogDescription>
           </DialogHeader>
-          <Input className="flex justify-center items-center" />
-          <Button onClick={handleVerifyOTP}>Verify</Button>
+          <Input
+            value={otp}
+            className="flex justify-center items-center"
+            onChange={(e) => setOtp(e.target.value)}
+          />
+          <Button onClick={handleVerifyOTP} disabled={isButtonDisabled}>
+            Verify
+          </Button>
         </DialogContent>
       </Dialog>
     </>
   );
 }
+
+// utils
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return emailRegex.test(email);
+};
+const validatePassword = (password: string): boolean => {
+  const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+  return passwordRegex.test(password);
+};
