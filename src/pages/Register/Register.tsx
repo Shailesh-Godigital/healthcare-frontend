@@ -53,7 +53,7 @@ export default function Register() {
       return;
     }
     if (!validateEmail(email)) {
-      toast("Invalid Email formate", {
+      toast("Invalid Email format", {
         icon: "❗",
       });
       return;
