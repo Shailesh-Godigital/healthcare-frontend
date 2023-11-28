@@ -111,7 +111,7 @@ export default function Register() {
         <Toaster />
       </div>
 
-      <div className="flex flex-col justify-center items-center bg-green-500 h-screen px-2">
+      <div className="flex flex-col justify-center items-center bg-green-500 dark:bg-gray-700 h-screen px-2">
         <Card className="w-[500px]">
           <CardHeader>
             <CardTitle>Register</CardTitle>

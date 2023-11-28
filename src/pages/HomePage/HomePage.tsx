@@ -1,4 +1,4 @@
-import { Header } from "../index.js";
+import { Header } from "../../components";
 
 export default function HomePage() {
   return (

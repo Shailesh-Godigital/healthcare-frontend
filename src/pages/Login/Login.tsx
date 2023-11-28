@@ -9,8 +9,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import axios from "axios";
 import { FormEvent, useState } from "react";
+
+import axios from "axios";
 
 import toast, { Toaster } from "react-hot-toast";
 
@@ -61,7 +62,7 @@ export default function Login() {
       <div>
         <Toaster />
       </div>
-      <div className="flex flex-col justify-center items-center bg-blue-500 h-screen px-2">
+      <div className="flex flex-col justify-center items-center bg-blue-500 dark:bg-gray-700 h-screen px-2">
         <Card className="w-[500px]">
           <CardHeader>
             <CardTitle>Login</CardTitle>
@@ -73,7 +74,7 @@ export default function Login() {
             <form>
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Email</Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
                     placeholder="Enter your Email"
@@ -82,9 +83,10 @@ export default function Login() {
                   />
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="framework">Password</Label>
+                  <Label htmlFor="password">Password</Label>
                   <Input
                     id="password"
+                    type="password"
                     placeholder="Enter your Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
