@@ -62,7 +62,7 @@ export default function Login() {
       <div>
         <Toaster />
       </div>
-      <div className="flex flex-col justify-center items-center bg-blue-500 dark:bg-gray-700 h-screen px-2">
+      <div className="flex flex-col justify-center items-center bg-blue-500 dark:bg-black h-screen px-2">
         <Card className="w-[500px]">
           <CardHeader>
             <CardTitle>Login</CardTitle>

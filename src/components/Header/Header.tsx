@@ -25,7 +25,7 @@ export default function Header() {
               <a href="/login">
                 <div className="flex flex-row items-center space-x-1">
                   <User2 size={20} absoluteStrokeWidth />
-                  <p className="text-xs">Login/Signup</p>
+                  <p className="text-xs hidden md:block">Login/Signup</p>
                 </div>
               </a>
 
@@ -39,7 +39,7 @@ export default function Header() {
                 </div>
               </a>
 
-              <div className="hidden lg:block">
+              <div>
                 <Switch
                   id="darkmode"
                   checked={theme === "dark"}
@@ -51,6 +51,14 @@ export default function Header() {
                 <Label htmlFor="darkmode" className="cursor-pointer">
                   {theme == "dark" ? <Sun /> : <Moon />}
                 </Label>
+              </div>
+
+              <div className="md:block lg:hidden xl:hidden 2xl:hidden">
+                <div className="space-y-2">
+                  <div className="w-8 h-0.5 bg-gray-600"></div>
+                  <div className="w-8 h-0.5 bg-gray-600"></div>
+                  <div className="w-8 h-0.5 bg-gray-600"></div>
+                </div>
               </div>
             </div>
           </div>
