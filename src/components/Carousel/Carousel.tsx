@@ -30,30 +30,25 @@ function CarouselUtility({
   }, []);
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative w-full bg-red-500">
       <div
         className="flex transition-transform ease-out duration-500"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides.map((img, index) => (
-          <img
-            src={img}
-            alt={img}
-            key={index}
-            className="object-cover w-full h-full bg-red-500"
-          />
+          <img src={img} alt={img} key={index} className="object-fill w-full" />
         ))}
       </div>
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <button
           onClick={prev}
-          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
         >
           <ArrowLeft size={40} />
         </button>
         <button
           onClick={next}
-          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
         >
           <ArrowRight size={40} />
         </button>
@@ -66,6 +61,7 @@ function CarouselUtility({
               key={i}
               className={`
               transition-all w-3 h-3 bg-white rounded-full
+              border-2 border-black
               ${curr === i ? "p-2" : "bg-opacity-50"}
             `}
             />
@@ -80,8 +76,8 @@ export default function Carousel() {
   const slides = [img1, img2, img3, img4, img5];
 
   return (
-    <div className="h-screen w-screen">
-      <div className="w-screen h-screen">
+    <div className="h-screen w-full">
+      <div>
         <CarouselUtility slides={slides} />
       </div>
     </div>

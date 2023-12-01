@@ -112,7 +112,7 @@ export default function Register() {
       </div>
 
       <div className="flex flex-col justify-center items-center bg-green-500 dark:bg-black h-screen px-2">
-        <Card className="w-[500px]">
+        <Card className="md:w-[500px] sm:w-[300px]">
           <CardHeader>
             <CardTitle>Register</CardTitle>
             <CardDescription>
@@ -122,7 +122,7 @@ export default function Register() {
           <CardContent>
             <form>
               <div className="grid w-full items-center gap-4">
-                <div className="flex flex-row gap-10">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="firstName">First Name</Label>
                     <Input
@@ -144,6 +144,7 @@ export default function Register() {
                     />
                   </div>
                 </div>
+
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="email">Email</Label>
                   <Input

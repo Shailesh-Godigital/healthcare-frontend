@@ -1,14 +1,22 @@
+import { useState } from "react";
+
 import { useTheme } from "@/components/theme-provider";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
-import { User2, Phone, Sun, Moon } from "lucide-react";
-import { NavigationMenu } from "@/components";
+import { NavigationMenu, Accordion } from "@/components";
 
+import { User2, Phone, Sun, Moon } from "lucide-react";
 import imgUrl from "/logo.jpg";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
+  const [hamburger, setHamburger] = useState(false);
+
+  const handleHamburger = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setHamburger((prev) => !prev);
+  };
   return (
     <>
       <div className="flex flex-col w-full px-2 md:px-10 lg:px-20 py-2 justify-between">
@@ -53,11 +61,14 @@ export default function Header() {
                 </Label>
               </div>
 
-              <div className="md:block lg:hidden xl:hidden 2xl:hidden">
+              <div
+                className="md:block lg:hidden xl:hidden 2xl:hidden cursor-pointer"
+                onClick={handleHamburger}
+              >
                 <div className="space-y-2">
-                  <div className="w-8 h-0.5 bg-gray-600"></div>
-                  <div className="w-8 h-0.5 bg-gray-600"></div>
-                  <div className="w-8 h-0.5 bg-gray-600"></div>
+                  <div className="w-8 h-0.5 bg-gray-800 dark:bg-gray-300"></div>
+                  <div className="w-8 h-0.5 bg-gray-800 dark:bg-gray-300"></div>
+                  <div className="w-8 h-0.5 bg-gray-800 dark:bg-gray-300"></div>
                 </div>
               </div>
             </div>
@@ -68,6 +79,15 @@ export default function Header() {
           <div className="hidden lg:block">
             <NavigationMenu />
           </div>
+          {hamburger && (
+            <div
+              className={`w-full md:block lg:hidden xl:hidden 2xl:hidden absolute z-10 bg-white dark:bg-[#020817] ${
+                hamburger ? "h-screen" : "hidden"
+              }`}
+            >
+              <Accordion />
+            </div>
+          )}
         </div>
       </div>
     </>

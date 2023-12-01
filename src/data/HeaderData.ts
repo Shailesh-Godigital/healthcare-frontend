@@ -107,46 +107,6 @@ export const Headerdata: {
         title: "Bone Density Test",
         href: "bone-density-test",
       },
-      {
-        title: "ECG Scan",
-        href: "ecg-scan",
-      },
-      {
-        title: "DEX Scan",
-        href: "dex-scan",
-      },
-      {
-        title: "PET Scan",
-        href: "pet-scan",
-      },
-      {
-        title: "Mammogram",
-        href: "mammogram",
-      },
-      {
-        title: "Bone Density Test",
-        href: "bone-density-test",
-      },
-      {
-        title: "ECG Scan",
-        href: "ecg-scan",
-      },
-      {
-        title: "DEX Scan",
-        href: "dex-scan",
-      },
-      {
-        title: "PET Scan",
-        href: "pet-scan",
-      },
-      {
-        title: "Mammogram",
-        href: "mammogram",
-      },
-      {
-        title: "Bone Density Test",
-        href: "bone-density-test",
-      },
     ],
   },
   {
