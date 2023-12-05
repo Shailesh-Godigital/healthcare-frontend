@@ -1,11 +1,13 @@
-import { Carousel } from "@/components/Carousel";
-import { Header } from "../../components";
+import { Header, Carousel, Cards, FAQ, Footer } from "@/components";
 
 export default function HomePage() {
   return (
-    <div className="h-screen">
+    <div>
       <Header />
       <Carousel />
+      <Cards />
+      <FAQ />
+      <Footer />
     </div>
   );
 }

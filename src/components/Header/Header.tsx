@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useTheme } from "@/components/theme-provider";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
 
 import { NavigationMenu, Accordion } from "@/components";
 
@@ -21,11 +22,16 @@ export default function Header() {
     <>
       <div className="flex flex-col w-full px-2 md:px-10 lg:px-20 py-2 justify-between">
         <div className="flex flex-row justify-between items-center py-2">
-          <div className="w-16">
+          <div className="w-16 gap-8 flex flex-row items-center">
             <img
               src={imgUrl}
               className="object-contain h-full w-full rounded-lg"
               alt="logo"
+            />
+            <Input
+              type="text"
+              placeholder="Search..."
+              className="w-[200px] hidden md:block"
             />
           </div>
           <div>

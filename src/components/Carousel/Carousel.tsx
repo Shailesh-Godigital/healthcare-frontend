@@ -76,7 +76,7 @@ export default function Carousel() {
   const slides = [img1, img2, img3, img4, img5];
 
   return (
-    <div className="h-screen w-full">
+    <div className="pb-8 w-full">
       <div>
         <CarouselUtility slides={slides} />
       </div>
