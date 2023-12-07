@@ -1,4 +1,4 @@
-import { Header, Carousel, Cards, FAQ, Footer } from "@/components";
+import { Header, Carousel, Cards, FAQ, Footer, Labs } from "@/components";
 
 export default function HomePage() {
   return (
@@ -6,6 +6,7 @@ export default function HomePage() {
       <Header />
       <Carousel />
       <Cards />
+      <Labs />
       <FAQ />
       <Footer />
     </div>

@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import img1 from "/carousel-1.jpg";
-import img2 from "/carousel-2.jpg";
-import img3 from "/carousel-3.jpg";
-import img4 from "/carousel-4.jpg";
-import img5 from "/carousel-5.jpg";
+import img1 from "/carousel-1.jpeg";
+import img2 from "/carousel-2.jpeg";
+import img3 from "/carousel-3.jpeg";
+import img4 from "/carousel-4.jpeg";
 
 function CarouselUtility({
   autoSlide = true,
@@ -36,7 +35,12 @@ function CarouselUtility({
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides.map((img, index) => (
-          <img src={img} alt={img} key={index} className="object-fill w-full" />
+          <img
+            src={img}
+            alt={img}
+            key={index}
+            className="object-fill w-screen md:h-screen sm:h-[500px]"
+          />
         ))}
       </div>
       <div className="absolute inset-0 flex items-center justify-between p-4">
@@ -44,13 +48,13 @@ function CarouselUtility({
           onClick={prev}
           className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
         >
-          <ArrowLeft size={40} />
+          <ArrowLeft size={20} />
         </button>
         <button
           onClick={next}
           className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
         >
-          <ArrowRight size={40} />
+          <ArrowRight size={20} />
         </button>
       </div>
 
@@ -73,7 +77,7 @@ function CarouselUtility({
 }
 
 export default function Carousel() {
-  const slides = [img1, img2, img3, img4, img5];
+  const slides = [img1, img2, img3, img4];
 
   return (
     <div className="pb-8 w-full">

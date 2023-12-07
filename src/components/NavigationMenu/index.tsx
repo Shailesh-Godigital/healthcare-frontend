@@ -1,1 +1,1 @@
-export { default as NavigationMenu } from "./navigationMenu.tsx";
+export { default as NavigationMenu } from "./NavigationMenu.tsx";

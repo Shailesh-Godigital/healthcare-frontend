@@ -6,6 +6,13 @@ export const Headerdata: {
   contents: Array<{ title: string; href: string }>;
 }[] = [
   {
+    title: "Home",
+    imgurl: "",
+    href: "/",
+    description: "",
+    contents: [],
+  },
+  {
     title: "Blood Test",
     imgurl: "/blood-test.jpg",
     href: "/blood-test",
@@ -42,9 +49,9 @@ export const Headerdata: {
     ],
   },
   {
-    title: "X-rays & Scans",
+    title: "Labs & Scans",
     imgurl: "/x-ray.jpg",
-    href: "/scans",
+    href: "/labs",
     description: "Choose from a variety of scan tests",
     contents: [
       {
@@ -87,46 +94,53 @@ export const Headerdata: {
         title: "Bone Density Test",
         href: "bone-density-test",
       },
-      {
-        title: "ECG Scan",
-        href: "ecg-scan",
-      },
-      {
-        title: "DEX Scan",
-        href: "dex-scan",
-      },
-      {
-        title: "PET Scan",
-        href: "pet-scan",
-      },
-      {
-        title: "Mammogram",
-        href: "mammogram",
-      },
-      {
-        title: "Bone Density Test",
-        href: "bone-density-test",
-      },
     ],
   },
   {
-    title: "Genetic Testing",
-    href: "/genetic-testing",
-    imgurl: "/genetic-test.jpg",
-    description:
-      "Explore your genetic makeup and discover valuable health insights.",
+    title: "Home Nursing",
+    href: "/home-nursing",
+    imgurl: "/homeNursing.jpeg",
+    description: "Receive personalized care in the comfort of your home.",
     contents: [
       {
-        title: "Ancestry DNA Test",
-        href: "ancestry-dna-test",
+        title: "Nursing Care",
+        href: "nursing-care",
       },
       {
-        title: "Health Risk Assessment",
-        href: "health-risk-assessment",
+        title: "Post-Surgical Care",
+        href: "post-surgical-care",
       },
       {
-        title: "Carrier Screening",
-        href: "carrier-screening",
+        title: "Elderly Care",
+        href: "elderly-care",
+      },
+      {
+        title: "Medication Management",
+        href: "medication-management",
+      },
+      {
+        title: "Wound Care",
+        href: "wound-care",
+      },
+      {
+        title: "Physiotherapy at Home",
+        href: "physiotherapy-at-home",
+      },
+      {
+        title: "Palliative Care",
+        href: "palliative-care",
+      },
+      {
+        title: "Maternity Care",
+        href: "maternity-care",
+      },
+      {
+        title: "Newborn Care",
+        href: "newborn-care",
+      },
+      {
+        title: "Medical Equipment Rental",
+        href: "medical-equipment-rental",
       },
     ],
   },
@@ -155,26 +169,6 @@ export const Headerdata: {
       {
         title: "Second Opinion",
         href: "second-opinion",
-      },
-    ],
-  },
-  {
-    title: "Surgery",
-    imgurl: "/surgery.jpg",
-    href: "/surgery",
-    description: "Expert surgical procedures with personalized care.",
-    contents: [
-      {
-        title: "Orthopedic Surgery",
-        href: "orthopedic-surgery",
-      },
-      {
-        title: "Cardiac Surgery",
-        href: "cardiac-surgery",
-      },
-      {
-        title: "General Surgery",
-        href: "general-surgery",
       },
     ],
   },
