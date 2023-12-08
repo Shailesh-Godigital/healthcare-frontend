@@ -26,7 +26,7 @@ const iconComponents: IconComponents = {
 const Cards: React.FC = () => {
   return (
     <div className="flex flex-col items-center py-16 gap-8">
-      <h1 className="font-Proxima-Nova font-medium text-2xl md:text-3xl border-b-4 border-indigo-500">
+      <h1 className="font-Proxima-Nova font-medium text-2xl md:text-3xl border-b-4 border-blue-600">
         Why Choose Accufly
       </h1>
       <div className="flex flex-wrap w-screen justify-center gap-2 md:gap-4 px-2 md:px-4">

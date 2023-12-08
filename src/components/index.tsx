@@ -6,3 +6,4 @@ export { Cards } from "./Cards";
 export { FAQ } from "./FAQ";
 export { Footer } from "./Footer";
 export { Labs } from "./Labs";
+export { Banner } from "./Banner";
