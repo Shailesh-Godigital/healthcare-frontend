@@ -39,8 +39,8 @@ const Cards: React.FC = () => {
               key={index}
             >
               <CardContent className="flex flex-col justify-between h-full">
-                <div className="flex flex-row justify-between items-center">
-                  <p className="text-xl opacity-50">{`0${index + 1}`}</p>
+                <div className="flex flex-row justify-center items-center">
+                  {/* <p className="text-xl opacity-50">{`0${index + 1}`}</p> */}
                   {IconComponent && <IconComponent size={40} />}
                 </div>
                 <div>

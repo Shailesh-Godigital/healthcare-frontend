@@ -6,6 +6,8 @@ import {
   Footer,
   Labs,
   Banner,
+  EnquiryForm,
+  OfferBanner,
 } from "@/components";
 
 export default function HomePage() {
@@ -15,8 +17,10 @@ export default function HomePage() {
       <Carousel />
       <Cards />
       <Labs />
+      <OfferBanner/>
       <Banner />
       <FAQ />
+      <EnquiryForm/>
       <Footer />
     </div>
   );

@@ -9,10 +9,11 @@ import { FAQData } from "@/data";
 export default function FAQ() {
   return (
     <div className="p-8">
-      <div className="bg-gray-100 dark:bg-[#101929] rounded-md p-2">
-        <h1 className="font-Proxima-Nova font-medium text-xl md:text-2xl pb-4 flex justify-center">
+      <h1 className="font-Proxima-Nova font-medium text-xl md:text-2xl pb-4 flex justify-center">
           Frequently Asked Questions
         </h1>
+      <div className="bg-gray-100 dark:bg-[#101929] rounded-md p-2">
+        
         {FAQData.map((item, index) => (
           <Accordion
             type="single"

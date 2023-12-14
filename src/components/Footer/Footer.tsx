@@ -14,6 +14,7 @@ export default function Footer() {
               className="object-contain h-[100px] w-[100px] rounded-lg "
               alt="logo"
             />
+        
           </div>
           {/* <h5 className="text-xl font-bold mb-6"></h5> */}
           <div className="grid grid-cols-3 justify-between gap-4 mt-4">

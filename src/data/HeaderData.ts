@@ -144,96 +144,96 @@ export const Headerdata: {
       },
     ],
   },
-  {
-    title: "Doctor Consultation",
-    imgurl: "/doctor-consultation.jpg",
-    href: "/online-doctor-consultation",
-    description: "Connect with experienced doctors online for consultations.",
-    contents: [
-      {
-        title: "Specialties",
-        href: "specialties",
-      },
-      {
-        title: "Symptoms",
-        href: "symptoms",
-      },
-      {
-        title: "Book Appointment",
-        href: "book-appointment",
-      },
-      {
-        title: "Prescription Renewal",
-        href: "prescription-renewal",
-      },
-      {
-        title: "Second Opinion",
-        href: "second-opinion",
-      },
-    ],
-  },
-  {
-    title: "Supplements",
-    imgurl: "/supplements.jpg",
-    href: "/supplements",
-    description:
-      "Enhance your well-being with our curated selection of supplements.",
-    contents: [
-      {
-        title: "Vitamins & Minerals",
-        href: "vitamins-minerals",
-      },
-      {
-        title: "Protein Supplements",
-        href: "protein-supplements",
-      },
-      {
-        title: "Herbal Extracts",
-        href: "herbal-extracts",
-      },
-      {
-        title: "Omega-3 Fatty Acids",
-        href: "omega-3-fatty-acids",
-      },
-      {
-        title: "Joint Health Supplements",
-        href: "joint-health-supplements",
-      },
-      {
-        title: "Antioxidants",
-        href: "antioxidants",
-      },
-      {
-        title: "Weight Management",
-        href: "weight-management",
-      },
-    ],
-  },
-  {
-    title: "Health Tips",
-    imgurl: "/health-tips.jpg",
-    href: "/health-tips",
-    description:
-      "Discover valuable tips and insights for a healthier lifestyle.",
-    contents: [
-      {
-        title: "Nutrition Tips",
-        href: "nutrition-tips",
-      },
-      {
-        title: "Exercise Routines",
-        href: "exercise-routines",
-      },
-      {
-        title: "Mental Health Strategies",
-        href: "mental-health-strategies",
-      },
-      {
-        title: "Sleep Hygiene",
-        href: "sleep-hygiene",
-      },
-    ],
-  },
+  // {
+  //   title: "Doctor Consultation",
+  //   imgurl: "/doctor-consultation.jpg",
+  //   href: "/online-doctor-consultation",
+  //   description: "Connect with experienced doctors online for consultations.",
+  //   contents: [
+  //     {
+  //       title: "Specialties",
+  //       href: "specialties",
+  //     },
+  //     {
+  //       title: "Symptoms",
+  //       href: "symptoms",
+  //     },
+  //     {
+  //       title: "Book Appointment",
+  //       href: "book-appointment",
+  //     },
+  //     {
+  //       title: "Prescription Renewal",
+  //       href: "prescription-renewal",
+  //     },
+  //     {
+  //       title: "Second Opinion",
+  //       href: "second-opinion",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Supplements",
+  //   imgurl: "/supplements.jpg",
+  //   href: "/supplements",
+  //   description:
+  //     "Enhance your well-being with our curated selection of supplements.",
+  //   contents: [
+  //     {
+  //       title: "Vitamins & Minerals",
+  //       href: "vitamins-minerals",
+  //     },
+  //     {
+  //       title: "Protein Supplements",
+  //       href: "protein-supplements",
+  //     },
+  //     {
+  //       title: "Herbal Extracts",
+  //       href: "herbal-extracts",
+  //     },
+  //     {
+  //       title: "Omega-3 Fatty Acids",
+  //       href: "omega-3-fatty-acids",
+  //     },
+  //     {
+  //       title: "Joint Health Supplements",
+  //       href: "joint-health-supplements",
+  //     },
+  //     {
+  //       title: "Antioxidants",
+  //       href: "antioxidants",
+  //     },
+  //     {
+  //       title: "Weight Management",
+  //       href: "weight-management",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Health Tips",
+  //   imgurl: "/health-tips.jpg",
+  //   href: "/health-tips",
+  //   description:
+  //     "Discover valuable tips and insights for a healthier lifestyle.",
+  //   contents: [
+  //     {
+  //       title: "Nutrition Tips",
+  //       href: "nutrition-tips",
+  //     },
+  //     {
+  //       title: "Exercise Routines",
+  //       href: "exercise-routines",
+  //     },
+  //     {
+  //       title: "Mental Health Strategies",
+  //       href: "mental-health-strategies",
+  //     },
+  //     {
+  //       title: "Sleep Hygiene",
+  //       href: "sleep-hygiene",
+  //     },
+  //   ],
+  // },
   {
     title: "Offers",
     imgurl: "",
