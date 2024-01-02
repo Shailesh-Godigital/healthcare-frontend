@@ -68,7 +68,7 @@ export default function EnquiryForm() {
           <div className="flex justify-center items-center">
             <button
               type="submit"
-              className="mt-2 px-5 p-2 text-sm rounded-lg border-blue-600 bg-blue-600 hover:scale-105 shadow"
+              className="mt-2 px-5 p-2 text-sm rounded-lg border-blue-600 bg-blue-600 hover:scale-105 shadow text-white"
             >
               Send message
             </button>

@@ -14,7 +14,7 @@ export default function Labs() {
           return (
             <Card className="p-2" key={i}>
               <CardContent className="flex flex-col">
-                <img src={item.imgSrc} className="w-[500px] h=[300px]"></img>
+                <img src={item.imgSrc} className="w-[500px] h=[400px]"></img>
                 <div className="flex flex-row justify-between">
                   <p>{item.name}</p>
                   <a href={`/labs${item.link}`}>

@@ -21,6 +21,30 @@ const routeData = [
     requiresAuth: false,
   },
   {
+    id: "route-003",
+    path: "/home-nursing",
+    component: reviews.HomeNursingPage,
+    requiresAuth: false,
+  },
+  {
+    id: "route-004",
+    path: "/ContactUs",
+    component: reviews.ContactPage,
+    requiresAuth: false,
+  },
+  {
+    id: "route-005",
+    path: "/labs",
+    component: reviews.LabScanPage,
+    requiresAuth: false,
+  },
+  {
+    id: "route-006",
+    path: "/ambulance",
+    component: reviews.AmbulanceService,
+    requiresAuth: false,
+  },
+  {
     id: "route-004",
     path: "*",
     component: reviews.NoPageFound,

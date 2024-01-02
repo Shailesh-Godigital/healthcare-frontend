@@ -1,6 +1,5 @@
 import {
   Accordion,
-  AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
@@ -17,12 +16,12 @@ export default function AccordionComponent() {
           key={index}
         >
           <AccordionItem value={`${item.title}`}>
-            <AccordionTrigger>{item.title}</AccordionTrigger>
-            {item.contents.map((content, index) => (
+           <a href={item.href}> <AccordionTrigger>{item.title}</AccordionTrigger></a>
+            {/* {item.contents.map((content, index) => (
               <AccordionContent key={index}>
-                <a href={`${item.href}/${content.href}`}>{content.title}</a>
+                <a href={item.href}>{content.title}</a>
               </AccordionContent>
-            ))}
+            ))} */}
           </AccordionItem>
         </Accordion>
       ))}

@@ -30,7 +30,7 @@ function CarouselUtility({
 
   return (
     <div className="overflow-hidden relative w-full bg-red-500">
-      <div
+      {/* <div
         className="flex transition-transform ease-out duration-500"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
@@ -41,6 +41,22 @@ function CarouselUtility({
             key={index}
             className="object-fill w-screen md:h-screen sm:h-[500px]"
           />
+        ))}
+      </div> */}
+      <div className="flex transition-transform ease-out duration-500"
+      style={{ transform: `translateX(-${curr * 100}%)` }}
+      >
+        {slides.map((img, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-full md:w-screen sm:w-full"
+          >
+            <img
+              src={img}
+              alt={img}
+              className="object-cover w-full h-full"
+            />
+          </div>
         ))}
       </div>
       <div className="absolute inset-0 flex items-center justify-between p-4">

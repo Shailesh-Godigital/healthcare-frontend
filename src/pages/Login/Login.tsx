@@ -27,6 +27,7 @@ export default function Login() {
           `http://localhost:5000/api/v1/auth/${route}`,
           bodydata
         );
+        console.log("🚀 ~ file: Login.tsx:30 ~ returnnewPromise ~ response:", response)
         resolve(response);
       } catch (error) {
         reject(error);
@@ -49,7 +50,7 @@ export default function Login() {
         error: <b>invalid credentials</b>,
       });
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "/Dashboard";
       }, 1000);
     } catch (error) {
       console.log(error);

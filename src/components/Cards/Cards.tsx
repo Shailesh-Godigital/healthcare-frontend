@@ -41,10 +41,10 @@ const Cards: React.FC = () => {
               <CardContent className="flex flex-col justify-between h-full">
                 <div className="flex flex-row justify-center items-center">
                   {/* <p className="text-xl opacity-50">{`0${index + 1}`}</p> */}
-                  {IconComponent && <IconComponent size={40} />}
+                  {IconComponent && <IconComponent size={50} />}
                 </div>
                 <div>
-                  <p className="text-base">{item.description}</p>
+                  <p className="text-base text-center">{item.description}</p>
                 </div>
               </CardContent>
             </Card>

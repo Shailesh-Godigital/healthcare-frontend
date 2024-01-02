@@ -8,7 +8,7 @@ export const BenefitsData: {
   },
   {
     icon: "Smile",
-    description: "35 Lakh+ Satisfied Customers",
+    description: "3 Lakh+ Satisfied Customers",
   },
   {
     icon: "MapPin",
@@ -20,7 +20,7 @@ export const BenefitsData: {
   },
   {
     icon: "Shield",
-    description: "Secure and Confidential Services",
+    description: "Secure Confidential Services ",
   },
   {
     icon: "Heart",

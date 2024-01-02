@@ -17,21 +17,21 @@ export default function Banner() {
       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Smiley_Doctor.jpg/1280px-Smiley_Doctor.jpg",
       content:
         "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place, Daya-Basti, Delhi-Heart-Institute, Delhi.",
-        price:"499"
+      price: "499"
     },
     {
       title: "Dr. Deepali Bhardwaj",
       img: "https://www.shutterstock.com/image-photo/medical-concept-indian-beautiful-female-260nw-1613858044.jpg",
       content:
         "MBBS, DVDL, MD (USA.IM), FACSI, FIADVL, Fellow Cutaneous Allergies, Munich, Germany, Fellow Cutaneous Surgeries & Laser , Tehran, Iran",
-        price:"1499"
+      price: "1499"
     },
     {
       title: "Dr. Satish Kumar",
       img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place, Daya-Basti, Delhi-Heart-Institute, Delhi.",
-        price:"999"
+      price: "999"
     },
     // {
     //   title: "React Tailwind Card with Grid 4",
@@ -64,13 +64,15 @@ export default function Banner() {
                 </h3>
               </div>
               <div className="m-2 flex items-center space-x-8">
-                <button className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow ">
+                <button className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white">
                   Book Video Consult
                 </button>
-                <button className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow">
+                <button className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white">
                   Book Hospital Visit
                 </button>
               </div>
+
+
             </div>
           ))}
         </div>

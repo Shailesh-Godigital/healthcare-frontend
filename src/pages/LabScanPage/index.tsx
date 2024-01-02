@@ -1,0 +1,1 @@
+export{default as LabScanPage} from './LabScanPage';
