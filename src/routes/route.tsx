@@ -45,6 +45,30 @@ const routeData = [
     requiresAuth: false,
   },
   {
+    id: "route-006",
+    path: "/Dashboard",
+    component: reviews.Dashboard,
+    requiresAuth: false,
+  },
+  {
+    id: "route-007",
+    path: "/labRegistration",
+    component: reviews.LabVendorRegistration,
+    requiresAuth: false,
+  },
+  {
+    id: "route-007",
+    path: "/MainDashboard",
+    component: reviews.MainDashboard,
+    requiresAuth: false,
+  },
+  {
+    id: "route-008",
+    path: "/labVendorRegistration",
+    component: reviews.LabVendorDashboard,
+    requiresAuth: false,
+  },
+  {
     id: "route-004",
     path: "*",
     component: reviews.NoPageFound,

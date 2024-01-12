@@ -18,12 +18,15 @@ import Whatsapp from '../../../public/whatsapp.png';
 import Call from '../../../public/call.png';
 import Backtotop from '../../../public/Backtotop.png';
 
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
   const [hamburger, setHamburger] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const navigate = useNavigate();
+  const login = sessionStorage.getItem('login')
+  const userName = sessionStorage.getItem('firstName')
 
   const handleHamburger = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -48,6 +51,35 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const handleTabClick = () => {
+    setMenuVisible(!menuVisible);
+  };
+  const handleProfile = (menuItem: any) => {
+
+
+    setMenuVisible(false);
+  };
+  const handleDashboard = (e: any) => {
+
+    e.preventDefault()
+    setMenuVisible(false);
+  };
+  const handleLogout = (menuItem: any) => {
+    console.log("logout");
+
+    sessionStorage.removeItem('login');
+    sessionStorage.removeItem('sessionToken');
+    sessionStorage.removeItem('firstName');
+    sessionStorage.removeItem('user_email');
+    navigate("/")
+    setMenuVisible(false);
+  };
+
+
   return (
     <>
       <div className="flex flex-col w-full px-2 md:px-10 lg:px-20 py-2 justify-between">
@@ -66,13 +98,47 @@ export default function Header() {
           </div>
           <div className="">
             <div className="flex flex-row justify-between items-center space-x-4">
-              <a href="/login">
-                <div className="flex flex-row items-center space-x-1">
-                  <User2 size={20} absoluteStrokeWidth />
-                  <p className="text-xs hidden md:block">Login/Signup</p>
-                </div>
-              </a>
+              {login !== "true" ? (
+                <a href="/login">
+                  <div className="flex flex-row items-center space-x-1">
+                    <User2 size={20} absoluteStrokeWidth />
+                    <p className="text-xs hidden md:block">Login/Signup</p>
+                  </div>
+                </a>
+              ) : (
+                <div className="relative">
+                  <a href="#" onClick={handleTabClick}>
+                    <div className="flex flex-row items-center space-x-1">
+                      {/* Assuming User2 is an icon component */}
+                      <User2 size={20} absoluteStrokeWidth />
+                      <p className="text-xs hidden md:block">{userName}</p>
+                    </div>
+                  </a>
 
+                  {menuVisible && (
+                    <div className="p-2 ml-4 dark:bg-[#101929] absolute top-8 right-0 bg-white border border-gray-300 shadow-md">
+                      <ul>
+                        <li>
+                          <a href="/Dashboard" onClick={() => handleDashboard('Dashboard')}>
+                            Dashboard
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" onClick={() => handleProfile('Profile')}>
+                            Profile
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" onClick={() => handleLogout('Logout')}>
+                            Logout
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )
+              }
               <a className="hidden md:block">
                 <div className="flex flex-row items-center space-x-1">
                   <Phone size={20} absoluteStrokeWidth />
@@ -156,11 +222,11 @@ export default function Header() {
 
           {showBackToTop && (
             <div
-              className="fixed left-3 bottom-5 z-50 p-3 bg-royal text-white cursor-pointer rounded-full"
+              className="fixed dark:bg-[#101929]  left-3 bottom-5 z-50 p-3 bg-royal text-white cursor-pointer rounded-full"
               onClick={scrollToTop}
             >
               <a className="md:ml-2 mr-7">
-                <img src={Backtotop} alt="Doctor Consultation" className="max-w-full h-7 mb-1" />
+                <img src={Backtotop} alt="Doctor Consultation" className="max-w-full dark:bg-[#101929]  h-7 mb-1" />
               </a>
             </div>
           )}

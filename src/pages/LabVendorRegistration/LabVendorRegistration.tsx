@@ -5,7 +5,7 @@ import {
 
   } from "@/components";
   
-  export default function LabScanPage() {
+  export default function LabVendorRegistration() {
     return (
       <div>
         <Header />
@@ -14,7 +14,8 @@ import {
  
      <br/>
      <br/>
-   <h1>Lab/Scan</h1>
+   
+     <VendorRegistrationForm/>
      <br/>
      <br/>
         <Footer />

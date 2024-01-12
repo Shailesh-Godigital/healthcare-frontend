@@ -27,7 +27,11 @@ export default function Login() {
           `http://localhost:5000/api/v1/auth/${route}`,
           bodydata
         );
-        console.log("🚀 ~ file: Login.tsx:30 ~ returnnewPromise ~ response:", response)
+        sessionStorage.setItem("login", "true")
+        sessionStorage.setItem("sessionToken",response.data.data.authentication.sessionToken)
+        sessionStorage.setItem("firstName",response.data.data.firstName)
+        sessionStorage.setItem("user_email",response.data.data.email)
+        // console.log("🚀 ~ file: Login.tsx:30 ~ returnnewPromise ~ response:", response.data)
         resolve(response);
       } catch (error) {
         reject(error);

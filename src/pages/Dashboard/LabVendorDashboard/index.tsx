@@ -1,0 +1,1 @@
+export {default as LabVendorDashboard } from './LabVendorDashboard'
