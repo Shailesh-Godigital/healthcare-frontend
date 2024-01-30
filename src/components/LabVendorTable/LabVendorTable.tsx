@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+
 
 interface VendorData {
   _id: string;
@@ -7,48 +8,25 @@ interface VendorData {
   ownerName: string;
   labServices: string;
   labEmail: string;
-  qualification:string;
+  qualification: string;
   logo: string;
   contactNo: string;
   licenceNumber: string;
   labAvailability: string;
-  labDocument:string
+  labDocument: string;
+  status: string;
+  remark:string;
   // Add other properties as needed
 }
 
-const people = [
-  {
-    name: 'Jane Cooper',
-    title: 'Regional Paradigm Technician',
-    department: 'Optimization',
-    role: 'Admin',
-    email: 'jane.cooper@example.com',
-    image: 'https://bit.ly/33HnjK0',
-  },
-  {
-    name: 'John Doe',
-    title: 'Regional Paradigm Technician',
-    department: 'Optimization',
-    role: 'Tester',
-    email: 'john.doe@example.com',
-    image: 'https://bit.ly/3I9nL2D',
-  },
-  {
-    name: 'Veronica Lodge',
-    title: 'Regional Paradigm Technician',
-    department: 'Optimization',
-    role: ' Software Engineer',
-    email: 'veronica.lodge@example.com',
-    image: 'https://bit.ly/3vaOTe1',
-  },
-  // More people...
-];
-export default function LabVendorTable() {
+export default function LabVendorTable(props:any) {
   const [vendorData, setVendorData] = useState<VendorData[]>([]);
-
+  const [selectedStatus, setSelectedStatus] = useState('');
   const fetchVendorData = async () => {
     try {
-      const apiUrl = 'http://localhost:5000/api/v1/labVender/getAllVendor';
+      // const apiUrl = `${process.env.REACT_APP_BASE_URL}/api/v1/labVender/getAllVendor`;
+      const apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/labVender/getAllVendor`;
+
       const response = await axios.get<VendorData[]>(apiUrl);
       console.log('🚀 ~ fetchVendorData ~ response:', response.data);
       setVendorData(response.data);
@@ -61,12 +39,32 @@ export default function LabVendorTable() {
     fetchVendorData();
   }, []);
 
+  const filteredVendorData = selectedStatus
+    ? vendorData.filter((vendor) => vendor.status === selectedStatus)
+    : vendorData;
+
+    const handleEditClick = (selectedVendorData:any) => {
+      // Pass the selected data to the parent component using the prop
+      console.log(selectedVendorData);
+      props.handleEditVendor(selectedVendorData);
+    };
 
   return (
     <div className="flex flex-col ml-4 ">
       <div className="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8 ">
         <div className="py-2  align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow  overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <div className="flex items-center">
+            <div className="text-start  pl-20 m-2 text-lg font-bold text-gray-700 dark:text-white ">
+              LAB VENDOR REGISTRATION
+            </div>
+            {/* <button
+                className="px-4 py-2 text-black rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 border-black"
+                onClick={() => handleEditClick(vendorData)}
+              >
+                +
+              </button> */}
+              </div>
             <table className="min-w-full dark:bg-[#101929]divide-y divide-gray-200">
               <thead className="bg-gray-50 dark:bg-[#10151f]">
                 <tr>
@@ -74,25 +72,25 @@ export default function LabVendorTable() {
                     scope="col"
                     className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                  Lab  Name
+                    Lab  Name
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                  Contact No.
+                    Contact No.
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                  Owner  Name
+                    Owner  Name
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                  Qualification
+                    Qualification
                   </th>
                   <th
                     scope="col"
@@ -104,7 +102,16 @@ export default function LabVendorTable() {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Status
+                    <select
+                      className="ml-2 p-1 border border-gray-300 rounded"
+                      value={selectedStatus}
+                      onChange={(e) => setSelectedStatus(e.target.value)}
+                    >
+                      <option value="">All Status</option>
+                      <option value="pending">Pending</option>
+                      <option value="approved">Approved</option>
+                      <option value="rejected">Rejected</option>
+                    </select>
                   </th>
                   <th
                     scope="col"
@@ -118,13 +125,20 @@ export default function LabVendorTable() {
                   >
                     Documents
                   </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Remark
+                  </th>
+
                   <th scope="col" className="relative px-6 py-3">
-                    <span className="sr-only">Edit</span>
+                    Action
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y dark:bg-[#101929] divide-gray-200">
-                {vendorData.map(vendorData => (
+                {filteredVendorData.map(vendorData => (
                   <tr key={vendorData._id}>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
@@ -152,22 +166,39 @@ export default function LabVendorTable() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
-                        className="px-2 inline-flex text-xs leading-5
-                      font-semibold rounded-full bg-green-100 text-green-800"
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${vendorData.status === 'approved'
+                          ? 'bg-green-100 text-green-800'
+                          : vendorData.status === 'rejected'
+                            ? 'bg-red-100 text-red-800'
+                            : vendorData.status === 'pending'
+                              ? 'bg-yellow-100 text-yellow-800'
+                              : ''
+                          }`}
                       >
-                        Active
+                        {vendorData.status}
                       </span>
                     </td>
+
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {vendorData.labAvailability}
+                      {"working on it"}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {vendorData.labDocument}
                     </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {vendorData.remark} || " "
+                    </td>
+
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                        Edit
-                      </a>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <a
+                      
+                          className="text-indigo-600 hover:text-indigo-900"
+                          onClick={() => handleEditClick(vendorData)}
+                        >
+                          Edit
+                        </a>
+                      </td>
                     </td>
                   </tr>
                 ))}

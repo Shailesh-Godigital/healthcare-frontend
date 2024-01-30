@@ -1,7 +1,7 @@
 import {
     Header,
     Footer,
-    VendorRegistrationForm,
+    // VendorRegistrationForm,
 
   } from "@/components";
   

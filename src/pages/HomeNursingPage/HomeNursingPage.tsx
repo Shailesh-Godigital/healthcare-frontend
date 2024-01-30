@@ -8,18 +8,22 @@ import {
   CallbackForm,
   TopNurses,
   Testimonial,
+
 } from "@/components";
+import { PhysiotherapyCard } from "@/components/PhysiotherapyCard";
 
 export default function HomePage() {
   return (
     <div>
       <Header />
       <CarouselNursing />
-   
+   {/* <Nursinglanding/> */}
+   <PhysiotherapyCard/>
     <IntroductionPage/>
-      <OfferBanner/>
+      
       {/* <Banner /> */}
       <CallbackForm/>
+      <OfferBanner/>
       <TopNurses/>
       <Testimonial/>
       <FAQ />

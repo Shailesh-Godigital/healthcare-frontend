@@ -1,6 +1,13 @@
 import { useState } from "react";
 import axios from 'axios';
 
+interface Availability {
+    day: string;
+    from: string;
+    to: string;
+    isChecked: boolean;
+}
+
 function VendorRegistrationForm() {
 
     const [formData, setFormData] = useState({
@@ -13,42 +20,74 @@ function VendorRegistrationForm() {
         logo: '',
         contactNo:'',
         licenceNumber: '',
-        labAvailability: 'time working',
+        labAvailability: [] as Availability[],
         labDocument:''
 
     });
 
-    const handleInputChange = (e: any) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value, type } = e.target;
+console.log(name);
+console.log(value);
+
+
+        if (type === "checkbox") {
+            const checked = (e.target as HTMLInputElement).checked;
+            const updatedAvailability = formData.labAvailability.map(day => {
+                if (day.day === name) {
+                    return { ...day, isChecked: checked };
+                }
+                return day;
+            });
+
+            setFormData({
+                ...formData,
+                labAvailability: updatedAvailability,
+            });
+        } else {
+            setFormData({
+                ...formData,
+                [name]: value,
+            });
+        }
     };
 
-    const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const dateValue = e.target.value;
-        const formattedDate = new Date(dateValue).toISOString();
-        console.log("🚀 ~ file: VendorRegistrationForm.tsx:31 ~ handleDateChange ~ formattedDate:", formattedDate)
+    // const handleDateChange = (e: any) => {
+    //     const dateValue = e.target.value;
+    //     const formattedDate = new Date(dateValue).toISOString();
+    //     console.log("🚀 ~ file: VendorRegistrationForm.tsx:31 ~ handleDateChange ~ formattedDate:", formattedDate)
 
-        setFormData({
-            ...formData,
-            ownerName: formattedDate,
-        });
-    };
+    //     setFormData({
+    //         ...formData,
+    //         ownerName: formattedDate,
+    //     });
+    // };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(formData);
 
+        // Format labAvailability to match the desired structure
+        const formattedAvailability = formData.labAvailability
+            .filter(day => day.isChecked)
+            .map(day => ({
+                day: day.day,
+                from: day.from,
+                to: day.to,
+            }));
+
+        // Update the form data with the formatted labAvailability
+        const updatedFormData = {
+            ...formData,
+            labAvailability: formattedAvailability,
+        };
+
         // Displaying an alert with the filled details
         alert("Thank you for submitting your form. It is under review.");
 
         try {
-            // let apiUrl = `${process.env.REACT_APP_BASE_URL}/api/v1/labVender/register`;
-            let apiUrl = `http://localhost:5000/api/v1/labVender/register`;
-
-            let response = await axios.post(apiUrl, formData);
+            let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/labVender/register`;
+            let response = await axios.post(apiUrl, updatedFormData);
             console.log(response.data);
 
         } catch (error) {
@@ -65,7 +104,7 @@ function VendorRegistrationForm() {
             logo: '',
             contactNo:'',
             licenceNumber: '',
-            labAvailability: ' ',
+            labAvailability: [],
             labDocument:''
         });
     };
@@ -77,11 +116,11 @@ function VendorRegistrationForm() {
     ];
 
 
-    const categoryOptions = [
-        { value: 'Category1', label: 'Category1' },
-        { value: 'Category2', label: 'Category2' },
-        { value: 'Category3', label: 'Category3' },
-    ];
+    // const categoryOptions = [
+    //     { value: 'Category1', label: 'Category1' },
+    //     { value: 'Category2', label: 'Category2' },
+    //     { value: 'Category3', label: 'Category3' },
+    // ];
 
     return (
         <>
@@ -292,13 +331,16 @@ function VendorRegistrationForm() {
                                             <input
                                                 type="checkbox"
                                                 id="mon"
-                                                name="week"
+                                                name="Monday"
                                                 className="mr-2"
+                                                onChange={handleInputChange}
                                             />
                                             <label htmlFor="mon" className="text-blueGray-600">Monday:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                                defaultValue="09:00 AM"
+                                               name="from"
+                                               onChange={handleInputChange}
+                                               
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -311,7 +353,8 @@ function VendorRegistrationForm() {
                                             <span className="text-blueGray-600">to</span>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 "
-                                                defaultValue="05:00 PM"
+                                                name="to"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for End Time */}
                                                 <option value="05:00 PM">05:00 PM</option>
@@ -326,13 +369,15 @@ function VendorRegistrationForm() {
                                             <input
                                                 type="checkbox"
                                                 id="mon"
-                                                name="week"
+                                                name="Tuesday"
                                                 className="mr-2"
+                                                onChange={handleInputChange}
                                             />
                                             <label htmlFor="mon" className="text-blueGray-600">Tuesday:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                                defaultValue="09:00 AM"
+                                                name="from"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -345,7 +390,8 @@ function VendorRegistrationForm() {
                                             <span className="text-blueGray-600">to</span>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 "
-                                                defaultValue="05:00 PM"
+                                                name="to"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for End Time */}
                                                 <option value="05:00 PM">05:00 PM</option>
@@ -360,13 +406,15 @@ function VendorRegistrationForm() {
                                             <input
                                                 type="checkbox"
                                                 id="mon"
-                                                name="week"
+                                                name="Wednesday"
                                                 className="mr-2"
+                                                onChange={handleInputChange}
                                             />
                                             <label htmlFor="mon" className="text-blueGray-600">Wednes:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                                defaultValue="09:00 AM"
+                                                name="from"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -379,7 +427,8 @@ function VendorRegistrationForm() {
                                             <span className="text-blueGray-600">to</span>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64"
-                                                defaultValue="05:00 PM"
+                                                name="to"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for End Time */}
                                                 <option value="05:00 PM">05:00 PM</option>
@@ -394,13 +443,15 @@ function VendorRegistrationForm() {
                                             <input
                                                 type="checkbox"
                                                 id="thr"
-                                                name="thr"
+                                                name="Thrusday"
                                                 className="mr-2"
+                                                onChange={handleInputChange}
                                             />
                                             <label htmlFor="thr" className="text-blueGray-600">Thrusda:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                                defaultValue="09:00 AM"
+                                                name="from"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -413,7 +464,8 @@ function VendorRegistrationForm() {
                                             <span className="text-blueGray-600">to</span>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 w-64"
-                                                defaultValue="05:00 PM"
+                                                name="to"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for End Time */}
                                                 <option value="05:00 PM">05:00 PM</option>
@@ -428,13 +480,15 @@ function VendorRegistrationForm() {
                                             <input
                                                 type="checkbox"
                                                 id="mon"
-                                                name="week"
+                                                name="Friday"
                                                 className="mr-2"
+                                                onChange={handleInputChange}
                                             />
                                             <label htmlFor="mon" className="text-blueGray-600">Friday:&nbsp;&nbsp;&nbsp;&nbsp; </label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                                defaultValue="09:00 AM"
+                                                name="from"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -447,7 +501,8 @@ function VendorRegistrationForm() {
                                             <span className="text-blueGray-600">to</span>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64"
-                                                defaultValue="05:00 PM"
+                                                name="to"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for End Time */}
                                                 <option value="05:00 PM">05:00 PM</option>
@@ -462,13 +517,15 @@ function VendorRegistrationForm() {
                                             <input
                                                 type="checkbox"
                                                 id="mon"
-                                                name="week"
+                                                name="Saturday"
                                                 className="mr-2"
+                                                onChange={handleInputChange}
                                             />
                                             <label htmlFor="mon" className="text-blueGray-600">Saturda:&nbsp;</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                                defaultValue="09:00 AM"
+                                                name="from"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -481,7 +538,8 @@ function VendorRegistrationForm() {
                                             <span className="text-blueGray-600">to</span>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64"
-                                                defaultValue="05:00 PM"
+                                                name="to"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for End Time */}
                                                 <option value="05:00 PM">05:00 PM</option>
@@ -496,13 +554,15 @@ function VendorRegistrationForm() {
                                             <input
                                                 type="checkbox"
                                                 id="mon"
-                                                name="week"
+                                                name="Sunday"
                                                 className="mr-2"
+                                                onChange={handleInputChange}
                                             />
                                             <label htmlFor="mon" className="text-blueGray-600">Sunday:&nbsp;&nbsp;</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                                defaultValue="09:00 AM"
+                                                name="from"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -515,7 +575,8 @@ function VendorRegistrationForm() {
                                             <span className="text-blueGray-600">to</span>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64"
-                                                defaultValue="05:00 PM"
+                                                name="to"
+                                                onChange={handleInputChange}
                                             >
                                                 {/* Options for End Time */}
                                                 <option value="05:00 PM">05:00 PM</option>

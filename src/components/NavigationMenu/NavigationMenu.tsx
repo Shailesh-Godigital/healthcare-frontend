@@ -1,4 +1,5 @@
-import * as React from "react";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,21 +11,52 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { cn } from "@/lib/utils";
-import { Headerdata } from "@/data";
+// import { Headerdata } from "@/data";
+
+
+interface vendorData {
+  _id: string;
+  title: string;
+  imgurl: string;
+  href: string;
+  description: string;
+  contents: string;
+
+  // Add other properties as needed
+}
 
 export default function navigationMenu() {
+  
+  const [vendorData, setVendorData] = useState<vendorData[]>([]);
+
+  const fetchVendorData = async () => {
+    try {
+      const apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/package/getPackage`;
+      const response = await axios.get<vendorData[]>(apiUrl);
+      console.log('🚀 ~ fetchVendorData ~ response:', response.data);
+      setVendorData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  useEffect(() => {
+    fetchVendorData();
+  }, []);
+
   return (
     <>
       <NavigationMenu>
         <NavigationMenuList>
-          {Headerdata.map((item, index) =>
+          {vendorData.map((item, index) =>
             item.contents.length ? (
               <NavigationMenuItem key={index}>
                 <NavigationMenuTrigger>
                   <a href={item.href}>{item.title}</a>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 lg:w-[1070px] lg:grid-cols-[1fr_1fr]">
+                  <ul className="grid gap-3  lg:w-[1070px] lg:grid-cols-[1fr_1fr]">
                     <li className="lg:w-[230px]">
                       <NavigationMenuLink asChild>
                         <a
@@ -42,7 +74,8 @@ export default function navigationMenu() {
                       </NavigationMenuLink>
                     </li>
                     <div className="grid gap-3 p-2 lg:w-[780px] lg:grid-cols-[repeat(auto-fill,minmax(180px,1fr))]">
-                      {item.contents.map((content, index) => (
+                    {Array.isArray(item.contents) &&
+    item.contents.map((content: { href: any; title: string | undefined }, index: React.Key | null | undefined) => (
                         <div key={index} className="col-span-1">
                           <ListItem
                             href={`${item.href}/${content.href}`}

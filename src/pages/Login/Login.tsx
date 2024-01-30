@@ -24,13 +24,15 @@ export default function Login() {
     return new Promise(async (resolve, reject) => {
       try {
         const response = await axios.post(
-          `http://localhost:5000/api/v1/auth/${route}`,
+          `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/auth/${route}`,
           bodydata
         );
         sessionStorage.setItem("login", "true")
         sessionStorage.setItem("sessionToken",response.data.data.authentication.sessionToken)
         sessionStorage.setItem("firstName",response.data.data.firstName)
         sessionStorage.setItem("user_email",response.data.data.email)
+        sessionStorage.setItem("role",response.data.data.role)
+        sessionStorage.setItem("status",response.data.data.status)
         // console.log("🚀 ~ file: Login.tsx:30 ~ returnnewPromise ~ response:", response.data)
         resolve(response);
       } catch (error) {

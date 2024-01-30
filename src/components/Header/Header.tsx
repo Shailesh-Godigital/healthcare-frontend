@@ -58,7 +58,7 @@ export default function Header() {
   const handleTabClick = () => {
     setMenuVisible(!menuVisible);
   };
-  const handleProfile = (menuItem: any) => {
+  const handleProfile = () => {
 
 
     setMenuVisible(false);
@@ -68,13 +68,15 @@ export default function Header() {
     e.preventDefault()
     setMenuVisible(false);
   };
-  const handleLogout = (menuItem: any) => {
+  const handleLogout = () => {
     console.log("logout");
 
     sessionStorage.removeItem('login');
     sessionStorage.removeItem('sessionToken');
     sessionStorage.removeItem('firstName');
     sessionStorage.removeItem('user_email');
+    sessionStorage.removeItem('status');
+    sessionStorage.removeItem("role")
     navigate("/")
     setMenuVisible(false);
   };
@@ -124,12 +126,12 @@ export default function Header() {
                           </a>
                         </li>
                         <li>
-                          <a href="#" onClick={() => handleProfile('Profile')}>
+                          <a href="#" onClick={() => handleProfile()}>
                             Profile
                           </a>
                         </li>
                         <li>
-                          <a href="#" onClick={() => handleLogout('Logout')}>
+                          <a href="#" onClick={() => handleLogout()}>
                             Logout
                           </a>
                         </li>
@@ -181,12 +183,12 @@ export default function Header() {
                 <div id="tabs" className="flex justify-between">
                   <a href="/" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
                     <img src={DoctorConsultation} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
-                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Consultation </span>
+                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Doctor </span>
                   </a>
 
                   <a href="/" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
                     <img src={Pharmacy} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
-                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Pharmacy</span>
+                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Medicine</span>
                   </a>
 
 
@@ -196,11 +198,11 @@ export default function Header() {
                   </a>
                   <a href="/" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
                     <img src={Ambulance} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
-                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Ambulance</span>
+                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Surgery</span>
                   </a>
                   <a href="/" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
                     <img src={HealthCare} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
-                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>HealthCare</span>
+                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Services</span>
 
                   </a>
                 </div>

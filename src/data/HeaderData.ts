@@ -1,3 +1,5 @@
+
+
 export const Headerdata: {
   title: string;
   href: string;
@@ -18,34 +20,34 @@ export const Headerdata: {
     href: "/blood-test",
     description: "Choose the blood test from different packages and tests.",
     contents: [
-      // {
-      //   title: "Popular Package",
-      //   href: "popular-package",
-      // },
-      // {
-      //   title: "Popular Tests",
-      //   href: "popular-tests",
-      // },
-      // {
-      //   title: "Govt Panel Health Test",
-      //   href: "govt-panel",
-      // },
-      // {
-      //   title: "Diabetes Panel",
-      //   href: "diabetes-panel",
-      // },
-      // {
-      //   title: "Cholesterol Test",
-      //   href: "cholesterol-test",
-      // },
-      // {
-      //   title: "Liver Function Tests",
-      //   href: "liver-function-tests",
-      // },
-      // {
-      //   title: "Full Blood Count",
-      //   href: "full-blood-count",
-      // },
+      {
+        title: "Cbc",
+        href: "CbcTest",
+      },
+      {
+        title: "Popular Tests",
+        href: "popular-tests",
+      },
+      {
+        title: "Govt Panel Health Test",
+        href: "govt-panel",
+      },
+      {
+        title: "Diabetes Panel",
+        href: "diabetes-panel",
+      },
+      {
+        title: "Cholesterol Test",
+        href: "cholesterol-test",
+      },
+      {
+        title: "Liver Function Tests",
+        href: "liver-function-tests",
+      },
+      {
+        title: "Full Blood Count",
+        href: "full-blood-count",
+      },
     ],
   },
   {
@@ -54,46 +56,46 @@ export const Headerdata: {
     href: "/labs",
     description: "Choose from a variety of scan tests",
     contents: [
-      // {
-      //   title: "Digital X-ray",
-      //   href: "digital-x-ray",
-      // },
-      // {
-      //   title: "UltraSound",
-      //   href: "ultrasound",
-      // },
-      // {
-      //   title: "CT Scan",
-      //   href: "ct-scan",
-      // },
-      // {
-      //   title: "MRI Scan",
-      //   href: "mri-scan",
-      // },
-      // {
-      //   title: "TMT Scan",
-      //   href: "tmt-scan",
-      // },
-      // {
-      //   title: "ECG Scan",
-      //   href: "ecg-scan",
-      // },
-      // {
-      //   title: "DEX Scan",
-      //   href: "dex-scan",
-      // },
-      // {
-      //   title: "PET Scan",
-      //   href: "pet-scan",
-      // },
-      // {
-      //   title: "Mammogram",
-      //   href: "mammogram",
-      // },
-      // {
-      //   title: "Bone Density Test",
-      //   href: "bone-density-test",
-      // },
+      {
+        title: "Digital X-ray",
+        href: "digital-x-ray",
+      },
+      {
+        title: "UltraSound",
+        href: "ultrasound",
+      },
+      {
+        title: "CT Scan",
+        href: "ct-scan",
+      },
+      {
+        title: "MRI Scan",
+        href: "mri-scan",
+      },
+      {
+        title: "TMT Scan",
+        href: "tmt-scan",
+      },
+      {
+        title: "ECG Scan",
+        href: "ecg-scan",
+      },
+      {
+        title: "DEX Scan",
+        href: "dex-scan",
+      },
+      {
+        title: "PET Scan",
+        href: "pet-scan",
+      },
+      {
+        title: "Mammogram",
+        href: "mammogram",
+      },
+      {
+        title: "Bone Density Test",
+        href: "bone-density-test",
+      },
     ],
   },
   {

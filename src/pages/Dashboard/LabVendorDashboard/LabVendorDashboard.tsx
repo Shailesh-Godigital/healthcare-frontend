@@ -1,30 +1,44 @@
 import {
-    Header,
-    Footer,
-    LabVendorTable,
- 
-  } from "@/components";
-import { MainDashboardUi } from "@/components/MainDashboardUi";
+  Header,
+  Footer,
+  LabVendorTable,
+  EditLabform,
+
+} from "@/components";
+import  { useState } from 'react';
+// import { MainDashboardUi } from "@/components/MainDashboardUi";
 import { Sidebar } from "@/components/Sidebar";
-  
-  export default function LabVendorDashboard() {
-    return (
-      <div>
-        <Header />
-        <div className="flex flex-wrap mt-4 ">
-                <div className="w-full ml-20 lg:w-3/12 ">
-                   
-                   <Sidebar/>
-                </div>
-                <div className="w-full lg:w-7/12 px-4">
-                  
-                   {/* <DashboardCard/> */}
-                   <LabVendorTable />
-                </div>
-            </div>
-  
-        <Footer />
+// import EditLabForm from './EditLabForm'; // Import EditLabForm component
+
+const LabVendorDashboard = () => {
+  const [selectedVendorData, setSelectedVendorData] = useState(null);
+
+  const handleEditVendor = (selectedData:any) => {
+    console.log(selectedData);
+
+    setSelectedVendorData(selectedData);
+  };
+
+  return (
+    <div>
+      <Header />
+      <div className="flex flex-wrap mt-4">
+        <div className="w-full  pl-20 lg:w-3/12">
+          <Sidebar />
+        </div>
+        <div className="w-full lg:w-8/12 px-4"> 
+          {selectedVendorData ? (
+            // If data is available, render EditLabForm
+            <EditLabform vendorData={selectedVendorData} />
+          ) : (
+            // If no data, render LabVendorTable and pass handleEditVendor function as prop
+            <LabVendorTable handleEditVendor={handleEditVendor} />
+          )}
+        </div>
       </div>
-    );
-  }
-  
+      <Footer />
+    </div>
+  );
+};
+
+export default LabVendorDashboard;

@@ -35,7 +35,7 @@ export default function Register() {
     return new Promise(async (resolve, reject) => {
       try {
         const response = await axios.post(
-          `http://localhost:5000/api/v1/${route}`,
+          `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/${route}`,
           bodydata
         );
         resolve(response);
@@ -105,6 +105,7 @@ export default function Register() {
       setButtonDisabled(false);
     }
   };
+  
   return (
     <>
       <div>

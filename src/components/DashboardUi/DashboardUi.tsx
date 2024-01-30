@@ -2,6 +2,7 @@ import { DashboardCard } from "../DashboardCard";
 import { Profile } from "../Profile";
 
 export default function DashboardUi() {
+    
     return (
         <>
             <div className="flex flex-wrap">

@@ -1,6 +1,5 @@
 import { LabVendorTable } from "..";
-import { DashboardCard } from "../DashboardCard";
-import { Profile } from "../Profile";
+
 import Sidebar from "../Sidebar/Sidebar";
 
 export default function MainDashboardUi() {
