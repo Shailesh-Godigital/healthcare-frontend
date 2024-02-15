@@ -14,11 +14,11 @@ import { useState } from "react";
 export default function PackageDashboard() {
   const [selectedPackage, setSelectedPackage] = useState(null)
 
-  // const handelEditPackage = (selectedData: any) => {
-  //   console.log(selectedData);
+  const handelEditPackage = (selectedData: any) => {
+    console.log(selectedData);
     
-  //   setSelectedPackage(selectedData)
-  // }
+    setSelectedPackage(selectedData)
+  }
   console.log(setSelectedPackage);
   
   return (
@@ -33,7 +33,7 @@ export default function PackageDashboard() {
           {selectedPackage ? (
             <AddPackageForm packageData={selectedPackage}/>
           ) : (
-            <PackageTable />
+            <PackageTable handelEditPackage={handelEditPackage}/>
           )}
         </div>
       </div>

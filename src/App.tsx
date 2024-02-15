@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AppContent } from "./routes";
-// import {routes} from './routes'
+import {routes} from './routes'
 
 // type RouteType = {
 //   id: string | number;
@@ -22,7 +22,7 @@ function App() {
     <div>
       <Router>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <AppContent  />
+          <AppContent  routes={routes}/>
         </ThemeProvider>
       </Router>
     </div>

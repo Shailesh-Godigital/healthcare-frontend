@@ -15,11 +15,11 @@ interface VendorData {
   labAvailability: string;
   labDocument: string;
   status: string;
-  remark:string;
+  remark: string;
   // Add other properties as needed
 }
 
-export default function LabVendorTable(props:any) {
+export default function LabVendorTable(props: any) {
   const [vendorData, setVendorData] = useState<VendorData[]>([]);
   const [selectedStatus, setSelectedStatus] = useState('');
   const fetchVendorData = async () => {
@@ -37,17 +37,49 @@ export default function LabVendorTable(props:any) {
 
   useEffect(() => {
     fetchVendorData();
+
   }, []);
 
   const filteredVendorData = selectedStatus
     ? vendorData.filter((vendor) => vendor.status === selectedStatus)
     : vendorData;
 
-    const handleEditClick = (selectedVendorData:any) => {
-      // Pass the selected data to the parent component using the prop
-      console.log(selectedVendorData);
-      props.handleEditVendor(selectedVendorData);
-    };
+  const handleEditClick = (selectedVendorData: any) => {
+    // Pass the selected data to the parent component using the prop
+    console.log(selectedVendorData);
+    props.handleEditVendor(selectedVendorData);
+  };
+
+  const handleDelete = async (selectedVendorData: any) => {
+    // Pass the selected data to the parent component using the prop
+    console.log(selectedVendorData);
+
+    // Open a confirmation dialog before proceeding with deletion
+    const confirmDelete = window.confirm('Are you sure you want to delete?');
+    if (!confirmDelete) {
+        return; // Do nothing if user cancels deletion
+    }
+
+    try {
+        let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/labVender/delete/${selectedVendorData._id}`;
+
+        // Now, update the vendor data
+        let response = await axios.delete(apiUrl);
+        console.log(response.data);
+
+    
+
+        // Displaying an alert with the filled details
+
+        // Now, navigate after the asynchronous code has completed
+        // window.location.reload();
+        fetchVendorData()
+    } catch (error) {
+        console.error('Error saving data:', error);
+    }
+};
+
+
 
   return (
     <div className="flex flex-col ml-4 ">
@@ -55,16 +87,16 @@ export default function LabVendorTable(props:any) {
         <div className="py-2  align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow  overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <div className="flex items-center">
-            <div className="text-start  pl-20 m-2 text-lg font-bold text-gray-700 dark:text-white ">
-              LAB VENDOR REGISTRATION
-            </div>
-            {/* <button
+              <div className="text-start  pl-20 m-2 text-lg font-bold text-gray-700 dark:text-white ">
+                LAB VENDOR REGISTRATION
+              </div>
+              <button
                 className="px-4 py-2 text-black rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 border-black"
                 onClick={() => handleEditClick(vendorData)}
               >
                 +
-              </button> */}
-              </div>
+              </button>
+            </div>
             <table className="min-w-full dark:bg-[#101929]divide-y divide-gray-200">
               <thead className="bg-gray-50 dark:bg-[#10151f]">
                 <tr>
@@ -135,6 +167,9 @@ export default function LabVendorTable(props:any) {
                   <th scope="col" className="relative px-6 py-3">
                     Action
                   </th>
+                  <th scope="col" className="relative px-6 py-3">
+                    Delete
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y dark:bg-[#101929] divide-gray-200">
@@ -162,7 +197,9 @@ export default function LabVendorTable(props:any) {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">{vendorData.licenceNumber}</div>
-                      <div className="text-sm text-gray-500">{vendorData.labServices}</div>
+                      {/* <div className="text-sm text-gray-500">{vendorData.labServices} || " "</div> */}
+                      <div className="text-sm text-gray-500">working on it</div>
+
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
@@ -192,13 +229,25 @@ export default function LabVendorTable(props:any) {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <a
-                      
+
                           className="text-indigo-600 hover:text-indigo-900"
                           onClick={() => handleEditClick(vendorData)}
                         >
                           Edit
                         </a>
                       </td>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <a
+
+                          className="text-indigo-600 hover:text-indigo-900"
+                          onClick={() => handleDelete(vendorData)}
+                        >
+                          delete
+                        </a>
+                      </td>
+                    
                     </td>
                   </tr>
                 ))}

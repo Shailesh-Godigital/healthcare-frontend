@@ -3,9 +3,7 @@ import {
    
     FAQ,
     Footer,
-    OfferBanner,
    
-    IntroTestPage,
   } from "@/components";
 import TestIntro from "@/components/TestIntro/TestIntro";
   
@@ -16,13 +14,7 @@ import TestIntro from "@/components/TestIntro/TestIntro";
         {/* <CarouselNursing /> */}
      {/* <Nursinglanding/> */}
      <TestIntro/>
-      <IntroTestPage/>
-        
-        {/* <Banner /> */}
-        {/* <CallbackForm/> */}
-        <OfferBanner/>
-        {/* <TopNurses/> */}
-        {/* <Testimonial/> */}
+      
         <FAQ />
         {/* <EnquiryForm/> */}
         <Footer />

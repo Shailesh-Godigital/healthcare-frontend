@@ -29,7 +29,9 @@
     "react-dom": "^18.2.0",
     "react-dotenv": "^0.1.3",
     "react-hot-toast": "^2.4.1",
+    "react-multi-select-component": "^4.3.4",
     "react-router-dom": "^6.21.2",
+    "react-select": "^5.8.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7"
   },

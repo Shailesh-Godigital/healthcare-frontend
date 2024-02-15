@@ -9,6 +9,7 @@ import {
   EnquiryForm,
   OfferBanner,
   MedicineListing,
+  MedicalEquipment,
 } from "@/components";
 import OurVision from "@/components/OurVision/OurVision";
 
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Cards />
       <OurVision/>
       <MedicineListing/>
+      <MedicalEquipment/>
       <Labs />
       <OfferBanner/>
       <Banner />

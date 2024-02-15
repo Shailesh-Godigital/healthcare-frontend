@@ -7,49 +7,49 @@ const routeData = [
     path: "/",
     component: reviews.HomePage,
     requiresAuth: false,
-    roles: []
+    roles: [],
   },
   {
     id: "route-001",
     path: "/login",
     component: reviews.Login,
     requiresAuth: false,
-    roles: []
+    roles: [],
   },
   {
     id: "route-002",
     path: "/register",
     component: reviews.Register,
     requiresAuth: false,
-    roles: []
+    roles: [],
   },
   {
     id: "route-003",
     path: "/home-nursing",
     component: reviews.HomeNursingPage,
     requiresAuth: false,
-    roles: []
+    roles: [],
   },
   {
     id: "route-004",
     path: "/ContactUs",
     component: reviews.ContactPage,
     requiresAuth: false,
-    roles: []
+    roles: [],
   },
   {
     id: "route-005",
     path: "/labs",
     component: reviews.LabScanPage,
     requiresAuth: false,
-    roles: []
+    roles: [],
   },
   {
     id: "route-006",
     path: "/ambulance",
     component: reviews.AmbulanceService,
     requiresAuth: false,
-    roles: []
+    roles: [],
   },
   {
     id: "route-006",
@@ -80,7 +80,7 @@ const routeData = [
     roles: ['superAdmin']
   },
   {
-    id: "route-010",
+    id: "route-009",
     path: "/userManagement",
     component: reviews.UserManagementDashboard,
     requiresAuth: true,
@@ -111,36 +111,50 @@ const routeData = [
     id: "route-013",
     path: "/surgeryPlanning",
     component: reviews.surgeryPlanning,
-    requireAuth: false,
+    requiresAuth: false,
     roles: []
   },
   {
     id: "route-013",
     path: "/diagnostic",
     component: reviews.Diagnostic,
-    requireAuth: false,
+    requiresAuth: false,
     roles: []
   },
   {
     id: "route-013",
     path: "/physiotherapy",
     component: reviews.Physiotherapy,
-    requireAuth: false,
+    requiresAuth: false,
     roles: []
   },
   {
     id: "route-013",
     path: "/Pharmacy",
     component: reviews.Pharmacy,
-    requireAuth: false,
+    requiresAuth: false,
     roles: []
   },
   {
-    id: "route-00",
+    id: "route-14",
+    path: "/booking",
+    component: reviews.MyBooking,
+    requiresAuth: false,
+    roles: []
+  },
+  {
+    id: "route-15",
     path: "*",
     component: reviews.NoPageFound,
     requiresAuth: false,
     roles: []
+  },
+  {
+    id: "route-016",
+    path: "/profile",
+    component: reviews.EditProfile,
+    requiresAuth: true,
+    roles: ['superAdmin','user'],
   },
 ];
 

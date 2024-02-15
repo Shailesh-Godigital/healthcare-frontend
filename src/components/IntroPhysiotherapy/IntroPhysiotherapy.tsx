@@ -5,7 +5,7 @@ function IntroSurgeyPlanning() {
     return (
         <>
 
-            <div className="flex flex-col sm:flex-row bg-cover bg-center" style={{ backgroundImage: "url('https://www.southgatephysio.co.uk/wp-content/uploads/bfi_thumb/Picture15-3g8p82wn9hzfiiucqgdkay.jpg')" }}>
+            <div className="flex flex-col sm:flex-row bg-cover bg-center" style={{ backgroundImage: "url('https://aceheartinstitute.com/wp-content/uploads/2022/05/Physiotherapy.jpg')" }}>
                 {/* <div className="absolute inset-0 bg-black opacity-0"></div> */}
                 {/* Content Section */}
                 <div className="p-6 relative sm:p-12 md:p-24 sm:w-1/2 ml-8">

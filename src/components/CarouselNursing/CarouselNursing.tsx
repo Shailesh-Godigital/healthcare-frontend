@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import img1 from "/homeNursing3.jpeg";
-import img2 from "/homeNursing1.jpeg";
-import img3 from "/homeNursing2.jpeg";
+import img1 from "/carousel-2.jpeg";
+// import img2 from "/homeNursing1.jpeg";
+// import img3 from "/homeNursing2.jpeg";
 
 function CarouselUtility({
   autoSlide = true,
@@ -29,57 +29,60 @@ function CarouselUtility({
 
   return (
     <div className="overflow-hidden relative w-full bg-red-500">
-      <div className="flex transition-transform ease-out duration-500"
+    <div
+      className="flex transition-transform ease-out duration-500"
       style={{ transform: `translateX(-${curr * 100}%)` }}
+    >
+      {slides.map((img, index) => (
+        <div
+          key={index}
+          className="w-full md:w-screen sm:w-full"
+          style={{ flex: "0 0 auto", width: "100%" }}
+        >
+          <img
+            src={img}
+            alt={img}
+            className="object-cover w-full h-full"
+            style={{ display: "block" }}
+          />
+        </div>
+      ))}
+    </div>
+    <div className="absolute inset-0 flex items-center justify-between p-4">
+      <button
+        onClick={prev}
+        className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
       >
-        {slides.map((img, index) => (
+        <ArrowLeft size={20} />
+      </button>
+      <button
+        onClick={next}
+        className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
+      >
+        <ArrowRight size={20} />
+      </button>
+    </div>
+
+    <div className="absolute bottom-4 right-0 left-0">
+      <div className="flex items-center justify-center gap-2">
+        {slides.map((_, i) => (
           <div
-            key={index}
-            className="flex-shrink-0 w-full md:w-screen sm:w-full"
-          >
-            <img
-              src={img}
-              alt={img}
-              className="object-cover w-full h-full"
-            />
-          </div>
+            key={i}
+            className={`
+            transition-all w-3 h-3 bg-white rounded-full
+            border-2 border-black
+            ${curr === i ? "p-2" : "bg-opacity-50"}
+          `}
+          />
         ))}
       </div>
-      <div className="absolute inset-0 flex items-center justify-between p-4">
-        <button
-          onClick={prev}
-          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
-        >
-          <ArrowLeft size={20} />
-        </button>
-        <button
-          onClick={next}
-          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
-        >
-          <ArrowRight size={20} />
-        </button>
-      </div>
-
-      <div className="absolute bottom-4 right-0 left-0">
-        <div className="flex items-center justify-center gap-2">
-          {slides.map((_, i) => (
-            <div
-              key={i}
-              className={`
-                transition-all w-3 h-3 bg-white rounded-full
-                border-2 border-black
-                ${curr === i ? "p-2" : "bg-opacity-50"}
-              `}
-            />
-          ))}
-        </div>
-      </div>
     </div>
+  </div>
   );
 }
 
 export default function CarouselNursing() {
-  const slides = [img1, img2, img3];
+  const slides = [img1];
 
   return (
     <div className=" w-full">

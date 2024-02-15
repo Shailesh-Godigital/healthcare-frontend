@@ -1,48 +1,69 @@
 import { useState } from "react";
 import axios from 'axios';
-
+import Selectmulti from 'react-select';
 interface Availability {
     day: string;
     from: string;
     to: string;
     isChecked: boolean;
 }
+// interface labServices {
+//     value: string;
+//     label: string;
+
+// }
 
 function VendorRegistrationForm() {
 
     const [formData, setFormData] = useState({
-       
+
         labName: "",
         ownerName: "",
-        labServices: '',
+        labServices: [],
         labEmail: '',
-        qualification:'',
+        qualification: '',
         logo: '',
-        contactNo:'',
+        contactNo: '',
         licenceNumber: '',
         labAvailability: [] as Availability[],
-        labDocument:''
+        labDocument: ''
 
     });
+    const [selectedOption, setSelectedOption] = useState([])
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handlechangeService = (selectedOption: any) => {
+        setSelectedOption(selectedOption);
+        console.log(selectedOption);
+        // Update the labServices in formData
+        setFormData({
+            ...formData,
+            labServices: selectedOption
+        });
+    };
+
+    const handleInputChange = (e: any) => {
         const { name, value, type } = e.target;
-console.log(name);
-console.log(value);
-
-
+        console.log(name);
+        console.log(value);
+    
         if (type === "checkbox") {
-            const checked = (e.target as HTMLInputElement).checked;
+            const checked = e.target.checked;
             const updatedAvailability = formData.labAvailability.map(day => {
                 if (day.day === name) {
                     return { ...day, isChecked: checked };
                 }
                 return day;
             });
-
+    
             setFormData({
                 ...formData,
                 labAvailability: updatedAvailability,
+            });
+        } else if (type === "select-multiple") {
+            const selectedValues = Array.from<HTMLSelectElement, string>(e.target.selectedOptions, option => option.value);
+            setFormData({
+                ...formData,
+                [name]: selectedValues,
             });
         } else {
             setFormData({
@@ -51,17 +72,7 @@ console.log(value);
             });
         }
     };
-
-    // const handleDateChange = (e: any) => {
-    //     const dateValue = e.target.value;
-    //     const formattedDate = new Date(dateValue).toISOString();
-    //     console.log("🚀 ~ file: VendorRegistrationForm.tsx:31 ~ handleDateChange ~ formattedDate:", formattedDate)
-
-    //     setFormData({
-    //         ...formData,
-    //         ownerName: formattedDate,
-    //     });
-    // };
+    
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -81,6 +92,9 @@ console.log(value);
             ...formData,
             labAvailability: formattedAvailability,
         };
+        console.log(selectedOption);
+
+        console.log("🚀 ~ handleSubmit ~ updatedFormData:", updatedFormData)
 
         // Displaying an alert with the filled details
         alert("Thank you for submitting your form. It is under review.");
@@ -98,16 +112,17 @@ console.log(value);
         setFormData({
             labName: "",
             ownerName: "",
-            labServices: '',
+            labServices: [],
             labEmail: '',
-            qualification:'',
+            qualification: '',
             logo: '',
-            contactNo:'',
+            contactNo: '',
             licenceNumber: '',
             labAvailability: [],
-            labDocument:''
+            labDocument: ''
         });
     };
+   
 
     const labServicesOptions = [
         { value: 'Service 1', label: 'Service 1' },
@@ -116,11 +131,6 @@ console.log(value);
     ];
 
 
-    // const categoryOptions = [
-    //     { value: 'Category1', label: 'Category1' },
-    //     { value: 'Category2', label: 'Category2' },
-    //     { value: 'Category3', label: 'Category3' },
-    // ];
 
     return (
         <>
@@ -175,27 +185,20 @@ console.log(value);
 
                             <div className="w-full lg:w-6/12 px-4">
                                 <div className="relative w-full mb-3">
-                                    <label
-                                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                                        htmlFor="grid-password"
-                                    >
-                                        lab Services
+                                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                                        Lab Services
                                     </label>
-                                    <select
+                                    <Selectmulti
+                                        options={labServicesOptions as any}
+                                        value={selectedOption}
+                                        onChange={handlechangeService}
+                                        isMulti
                                         name="labServices"
-                                        value={formData.labServices}
-                                        onChange={handleInputChange}
-                                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#162133] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                        defaultValue="Lucky"
-                                    >
-                                        {labServicesOptions.map((option) => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.label}
-                                            </option>
-                                        ))}
-                                    </select>
+                                    />
+
                                 </div>
                             </div>
+
                             <div className="w-full lg:w-12/12 px-4">
                                 <div className="relative w-full mb-3">
                                     <label
@@ -338,9 +341,9 @@ console.log(value);
                                             <label htmlFor="mon" className="text-blueGray-600">Monday:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
-                                               name="from"
-                                               onChange={handleInputChange}
-                                               
+                                                name="from"
+                                                onChange={handleInputChange}
+
                                             >
                                                 {/* Options for Start Time */}
                                                 <option value="08:00 AM">08:00 AM</option>
@@ -368,12 +371,12 @@ console.log(value);
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
                                             <input
                                                 type="checkbox"
-                                                id="mon"
+                                                id="Tuesday"
                                                 name="Tuesday"
                                                 className="mr-2"
                                                 onChange={handleInputChange}
                                             />
-                                            <label htmlFor="mon" className="text-blueGray-600">Tuesday:</label>
+                                            <label htmlFor="Tuesday" className="text-blueGray-600">Tuesday:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
                                                 name="from"
@@ -405,12 +408,12 @@ console.log(value);
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
                                             <input
                                                 type="checkbox"
-                                                id="mon"
+                                                id="Wednesday"
                                                 name="Wednesday"
                                                 className="mr-2"
                                                 onChange={handleInputChange}
                                             />
-                                            <label htmlFor="mon" className="text-blueGray-600">Wednes:</label>
+                                            <label htmlFor="Wednesday" className="text-blueGray-600">Wednes:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
                                                 name="from"
@@ -442,12 +445,12 @@ console.log(value);
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
                                             <input
                                                 type="checkbox"
-                                                id="thr"
-                                                name="Thrusday"
+                                                id="Thursday"
+                                                name="Thursday"
                                                 className="mr-2"
                                                 onChange={handleInputChange}
                                             />
-                                            <label htmlFor="thr" className="text-blueGray-600">Thrusda:</label>
+                                            <label htmlFor="Thursday" className="text-blueGray-600">Thrusda:</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
                                                 name="from"
@@ -479,12 +482,12 @@ console.log(value);
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
                                             <input
                                                 type="checkbox"
-                                                id="mon"
+                                                id="Friday"
                                                 name="Friday"
                                                 className="mr-2"
                                                 onChange={handleInputChange}
                                             />
-                                            <label htmlFor="mon" className="text-blueGray-600">Friday:&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                                            <label htmlFor="Friday" className="text-blueGray-600">Friday:&nbsp;&nbsp;&nbsp;&nbsp; </label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
                                                 name="from"
@@ -516,12 +519,12 @@ console.log(value);
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
                                             <input
                                                 type="checkbox"
-                                                id="mon"
+                                                id="Saturday"
                                                 name="Saturday"
                                                 className="mr-2"
                                                 onChange={handleInputChange}
                                             />
-                                            <label htmlFor="mon" className="text-blueGray-600">Saturda:&nbsp;</label>
+                                            <label htmlFor="Saturday" className="text-blueGray-600">Saturda:&nbsp;</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
                                                 name="from"
@@ -553,12 +556,12 @@ console.log(value);
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
                                             <input
                                                 type="checkbox"
-                                                id="mon"
+                                                id="Sunday"
                                                 name="Sunday"
                                                 className="mr-2"
                                                 onChange={handleInputChange}
                                             />
-                                            <label htmlFor="mon" className="text-blueGray-600">Sunday:&nbsp;&nbsp;</label>
+                                            <label htmlFor="Sunday" className="text-blueGray-600">Sunday:&nbsp;&nbsp;</label>
                                             <select
                                                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white dark:bg-[#101929] rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 ml-2 w-64 md:w-80"
                                                 name="from"

@@ -23,25 +23,26 @@ export default function Footer() {
 
 
                                     <div className="flex justify-center space-x-5">
-                                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.facebook.com/profile.php?id=61555179124157" target="_blank" rel="noopener noreferrer">
                                             <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
                                         </a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.linkedin.com/company/99426736/admin/feed/posts/?feedType=following" target="_blank" rel="noopener noreferrer">
                                             <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
                                         </a>
-                                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.instagram.com/mydr_24?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
                                             <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
                                         </a>
-                                        <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
-                                            <img
-                                                src="https://img.icons8.com/?size=256&id=13976&format=png"
-                                                style={{ width: '30px', height: '30px' }}
-                                                alt="Small Icon"
-                                            />
-
+                                        <a href="https://www.tumblr.com/blog/mydr24" target="_blank" rel="noopener noreferrer">
+                                            <img src="https://img.icons8.com/fluent/30/000000/tumblr.png" />
                                         </a>
-                                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://twitter.com/mydr24" target="_blank" rel="noopener noreferrer">
                                             <img src="https://img.icons8.com/fluent/30/000000/twitter.png" />
+                                        </a>
+                                        <a href="https://in.pinterest.com/mydr24/" target="_blank" rel="noopener noreferrer">
+                                            <img src="https://img.icons8.com/fluent/30/000000/pinterest.png" />
+                                        </a>
+                                        <a href="https://www.youtube.com/channel/UC6Qg6pYVI95423WGrue7g-A\" target="_blank" rel="noopener noreferrer">
+                                            <img src="https://img.icons8.com/fluent/30/000000/youtube.png" />
                                         </a>
                                     </div>
                                 </div>
@@ -106,8 +107,8 @@ export default function Footer() {
 
                             <div className="text-center sm:text-left">
                                 <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+91 93117 91119</span>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">customer.care@accufly.com</span>
+                               <a href="tel:+91 93117 91119" title="Call us"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline" >+91 93117 91119</span></a>
+                               <a href="mailto:customercare@mydr24.com"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">customercare@mydr24.com</span></a>
                             </div>
                         </div>
                     </div>

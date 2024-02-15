@@ -5,10 +5,10 @@ function IntroDiagnostic() {
     return (
         <>
 
-            <div className="flex flex-col sm:flex-row bg-cover bg-center" style={{ backgroundImage: "url('https://www.scientificpathology.com/image/1975663439_b_Healthcare-marketing-solutions.jpg')" }}>
+            <div className="flex flex-col sm:flex-row  bg-cover bg-center" style={{ backgroundImage: "url('https://img.freepik.com/premium-photo/male-hand-holding-red-heart-dark-background-early-diagnosis-cardiovascular-system_116441-22246.jpg')" }}>
                 {/* <div className="absolute inset-0 bg-black opacity-0"></div> */}
                 {/* Content Section */}
-                <div className="p-6 mt-10 relative sm:p-12 md:p-24 sm:w-1/2 ml-8">
+                <div className="p-6 mt-10 text-white relative sm:p-12 md:p-24 sm:w-1/2 ml-8">
                     <h1 className="text-2xl md:text-4xl font-bold mb-4 sm:text-xl">MYDR24 Diagnostic CENTER</h1>
                     <h2 className="text-xl">Embrace Freedom of Movement with the Power of Physio</h2>
                     <ul className="list-disc mb-4 m-4">

@@ -1,4 +1,4 @@
-import  { useState, } from 'react';
+import { useState, } from 'react';
 import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
     // const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
-        id:vendorData._id || '',
+        id: vendorData._id || '',
         labName: vendorData.labName || '',
         ownerName: vendorData.ownerName || '',
         labServices: vendorData.labServices || '',
@@ -37,8 +37,9 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
         contactNo: vendorData.contactNo || '',
         labDocument: vendorData.labDocument || '',
         logo: vendorData.logo || '',
-        labAvailability:vendorData.labAvailability || '',
+        labAvailability: vendorData.labAvailability || '',
         remark: vendorData.remark || '',
+        status: vendorData.status || '',
     });
 
     const handleChange = (e: any) => {
@@ -54,10 +55,10 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
         try {
             let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/labVender/update/${vendorData._id}`;
             let apiUrlUser = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/auth/register`;
-    
+
             // Include the status in the formData
             const updatedFormData = { ...formData, status };
-    
+
             if (updatedFormData.status === "approved") {
 
                 const trimmedFirstName = updatedFormData.ownerName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
@@ -71,30 +72,30 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
                     status: "approved"
                 };
                 console.log("🚀 ~ handleEdit ~ newUser:", newUser)
-    
+
                 // Use a different variable for the response from user registration
                 let userResponse = await axios.post(apiUrlUser, newUser);
                 console.log(userResponse.data);
             }
-    
+
             // Now, update the vendor data
             let response = await axios.put(apiUrl, updatedFormData);
             console.log(response.data);
-    
+
             // Update the form data with the response data
             setFormData(response.data);
-    
+
             alert('Thank you for submitting your form.');
-    
+
             // Displaying an alert with the filled details
-    
+
             // Now, navigate after the asynchronous code has completed
             window.location.reload();
         } catch (error) {
             console.error('Error saving data:', error);
         }
     };
-    
+
 
 
     // const handleSubmit = async () => {
@@ -113,7 +114,7 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
     //     } catch (error) {
     //         console.error('Error saving data:', error);
     //     }
-      
+
     // };
 
 
@@ -316,35 +317,54 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
 
                         <div className="flex justify-center mt-6">
                             {formData.id ? (
-                                 <><button
-                                 type="button"
-                                 onClick={() => handleEdit("approved")}
-                                 className="bg-green-500 text-white active:bg-green-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                             >
-                                 Approve
-                             </button><button
-                                 type="button"
-                                 onClick={() => handleEdit("rejected")}
-                                 className="bg-red-500 text-white active:bg-red-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                             >
-                                     Reject
-                                 </button><button
-                                     type="button"
-                                     onClick={() => handleEdit("pending")}
-                                     className="bg-yellow-500 text-white active:bg-yellow-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                                 >
-                                     Pending
-                                 </button></>
+                                <>
+                                    {formData.status === "approved" ? (
+                                        <button
+                                            type="button"
+                                            onClick={() => handleEdit("pending")}
+                                            className="bg-yellow-500 text-white active:bg-yellow-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                        >
+                                            Pending
+                                        </button>
+                                    ) : (
+                                        <>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleEdit("approved")}
+                                                className="bg-green-500 text-white active:bg-green-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                            >
+                                                Approve
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                onClick={() => handleEdit("rejected")}
+                                                className="bg-red-500 text-white active:bg-red-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                            >
+                                                Reject
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                onClick={() => handleEdit("pending")}
+                                                className="bg-yellow-500 text-white active:bg-yellow-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                            >
+                                                Pending
+                                            </button>
+                                        </>
+                                    )}
+                                </>
                             ) : (
                                 <button
-                                type="button"
-                                onClick={() => handleEdit("pending")}
-                                className="bg-green-500 text-white active:bg-green-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                            >
-                                Add
-                            </button>
+                                    type="button"
+                                    onClick={() => handleEdit("pending")}
+                                    className="bg-green-500 text-white active:bg-green-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                >
+                                    Add
+                                </button>
                             )}
                         </div>
+
 
 
                     </form>

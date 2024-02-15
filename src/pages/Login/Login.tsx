@@ -33,6 +33,8 @@ export default function Login() {
         sessionStorage.setItem("user_email",response.data.data.email)
         sessionStorage.setItem("role",response.data.data.role)
         sessionStorage.setItem("status",response.data.data.status)
+        sessionStorage.setItem("userId",response.data.data._id)
+        sessionStorage.setItem("lastName",response.data.data.lastName)
         // console.log("🚀 ~ file: Login.tsx:30 ~ returnnewPromise ~ response:", response.data)
         resolve(response);
       } catch (error) {

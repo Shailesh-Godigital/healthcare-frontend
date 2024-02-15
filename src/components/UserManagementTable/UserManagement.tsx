@@ -59,7 +59,17 @@ export default function UserManagementTable(props:any) {
       <div className="-my-2  overflow-x-auto sm:-mx-6 lg:-mx-8 ">
         <div className="py-2  align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow  overflow-hidden border-b border-gray-200 sm:rounded-lg">
-           <div className='flex items-center'>
+           <div className='flex items {!showPasswordFields && (
+                                <div className="flex justify-center mt-6">
+                                    <button
+                                        type="button"
+                                        onClick={handleChangePassword}
+                                        className="bg-blue-500 text-white active:bg-blue-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                    >
+                                        Change Password
+                                    </button>
+                                </div>
+                            )}-center'>
             <div className="text-start  pl-20 m-2 text-lg font-bold text-gray-700 dark:text-white ">
               User Management
             </div>

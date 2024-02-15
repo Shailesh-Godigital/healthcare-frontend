@@ -30,32 +30,25 @@ function CarouselUtility({
 
   return (
     <div className="overflow-hidden relative w-full bg-red-500">
-      {/* <div
+      <div
         className="flex transition-transform ease-out duration-500"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides.map((img, index) => (
-          <img
-            src={img}
-            alt={img}
-            key={index}
-            className="object-fill w-screen md:h-screen sm:h-[500px]"
-          />
-        ))}
-      </div> */}
-      <div className="flex transition-transform ease-out duration-500"
-      style={{ transform: `translateX(-${curr * 100}%)` }}
-      >
-        {slides.map((img, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-full md:w-screen sm:w-full"
+            className="w-full md:w-screen sm:w-full"
+            style={{ flex: "0 0 auto", width: "100%" }}
           >
+            <a >
             <img
               src={img}
               alt={img}
               className="object-cover w-full h-full"
+              style={{ display: "block" }}
+              
             />
+            </a>
           </div>
         ))}
       </div>
@@ -67,7 +60,7 @@ function CarouselUtility({
           <ArrowLeft size={20} />
         </button>
         <button
-          onClick={next}
+          onClick={next} // Fixed: added onClick event handler for next function
           className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white border-2 border-black"
         >
           <ArrowRight size={20} />
@@ -98,7 +91,9 @@ export default function Carousel() {
   return (
     <div className="pb-8 w-full">
       <div>
+        <a  href="tel:+91 93117 91119" title="Call us">
         <CarouselUtility slides={slides} />
+        </a>
       </div>
     </div>
   );

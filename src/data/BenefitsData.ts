@@ -8,11 +8,11 @@ export const BenefitsData: {
   },
   {
     icon: "Smile",
-    description: "3 Lakh+ Satisfied Customers",
+    description: "Thousands+ Satisfied Customers",
   },
   {
     icon: "MapPin",
-    description: "Presence in 250+ Cities Across India",
+    description: "Presence in 100+ Cities Across India",
   },
   {
     icon: "Clock",

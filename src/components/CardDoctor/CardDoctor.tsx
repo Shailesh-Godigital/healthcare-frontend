@@ -2,26 +2,26 @@
 function CardDoctor() {
     const Doctors = [
         {
-            title: "Dr. Khyati Bagga",
-            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Smiley_Doctor.jpg/1280px-Smiley_Doctor.jpg",
+            title: "Dr. Vipin Kumar",
+            img:'../../../public/DoctorImage1.jpeg',
             content:
-                "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place, Daya-Basti, Delhi-Heart-Institute, Delhi.",
+              "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT (EMERGENCY,TRAUMA & CRITICAL CARE)",
             price: "499"
-        },
-        {
-            title: "Dr. Deepali Bhardwaj",
-            img: "https://www.shutterstock.com/image-photo/medical-concept-indian-beautiful-female-260nw-1613858044.jpg",
+          },
+          {
+            title: " Dr. Mohd Faizan",
+            img:  '../../../public/DoctorImage2.jpeg',
             content:
-                "MBBS, DVDL, MD (USA.IM), FACSI, FIADVL, Fellow Cutaneous Allergies, Munich, Germany, Fellow Cutaneous Surgeries & Laser , Tehran, Iran",
+              "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida)   ",
             price: "1499"
-        },
-        {
+          },
+          {
             title: "Dr. Satish Kumar",
             img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             content:
-                "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place, Daya-Basti, Delhi-Heart-Institute, Delhi.",
+              "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place",
             price: "999"
-        },
+          },
         // {
         //   title: "React Tailwind Card with Grid 4",
         //   img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",

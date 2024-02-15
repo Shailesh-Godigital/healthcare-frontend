@@ -7,30 +7,33 @@
 //     </div>
 //   );
 // }
-
+import { useState } from 'react';
+// import img1 from '../../../public/DoctorImage1.jpeg';
+// import img2 from '../../../public/DoctorImage2.jpeg';
+import BookConsultationForm from '../BookConsultationForm/BookConsultationForm';
 
 
 export default function Banner() {
   const posts = [
     {
-      title: "Dr. Khyati Bagga",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Smiley_Doctor.jpg/1280px-Smiley_Doctor.jpg",
+      title: "Dr. Vipin Kumar",
+      img:'../../../public/DoctorImage1.jpeg',
       content:
-        "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place, Daya-Basti, Delhi-Heart-Institute, Delhi.",
+        "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT (EMERGENCY,TRAUMA & CRITICAL CARE)",
       price: "499"
     },
     {
-      title: "Dr. Deepali Bhardwaj",
-      img: "https://www.shutterstock.com/image-photo/medical-concept-indian-beautiful-female-260nw-1613858044.jpg",
+      title: " Dr. Mohd Faizan",
+      img:  '../../../public/DoctorImage2.jpeg',
       content:
-        "MBBS, DVDL, MD (USA.IM), FACSI, FIADVL, Fellow Cutaneous Allergies, Munich, Germany, Fellow Cutaneous Surgeries & Laser , Tehran, Iran",
+        "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida)   ",
       price: "1499"
     },
     {
       title: "Dr. Satish Kumar",
       img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
-        "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place, Daya-Basti, Delhi-Heart-Institute, Delhi.",
+        "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place",
       price: "999"
     },
     // {
@@ -40,6 +43,17 @@ export default function Banner() {
     //     "react tailwind css card with image It is a long established fact that a reader will be distracted by the readable content",
     // },
   ];
+
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+
+  const openDialog = () => {
+    setIsDialogOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+  };
   return (
     <>
       <div className="flex flex-col items-center py-16 gap-8 m-8">
@@ -50,38 +64,69 @@ export default function Banner() {
           {posts.map((items, key) => (
             <div className="w-full  shadow-md lg:max-w-sm " key={key}>
               <img
-                className="object-cover w-full h-48 rounded-lg"
+                className="object-cover w-full h-50 rounded-lg"
                 src={items.img}
                 alt="image"
               />
-              <div className="p-4">
+              <div className="p-4 h-40">
                 <h4 className="text-xl font-semibold text-blue-600 text-center">
                   {items.title}
                 </h4>
-                <p className="mb-2 leading-normal text-center">{items.content}</p>
-                <h3 className="text-xl font-semibold text-blue-600 text-center">
+                <p className="mb-2 leading-normal text-center ">{items.content}</p>
+                {/* <h3 className="text-xl font-semibold text-blue-600 text-center">
                   Starts at <span>&#8377;</span>{items.price}
-                </h3>
+                </h3> */}
               </div>
               <div className="m-2 flex items-center space-x-8">
-                <button className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white">
+                <button
+                  onClick={openDialog}
+                  className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white"
+                >
                   Book Video Consult
                 </button>
-                <button className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white">
+                <button
+                  onClick={openDialog}
+                  className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white"
+                >
                   Book Hospital Visit
                 </button>
               </div>
-
-
             </div>
           ))}
         </div>
       </div>
 
-    </>
-  );
-}
+      {isDialogOpen && (
+        <div className="fixed inset-0 z-10 overflow-y-auto">
+          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div className="fixed inset-0 transition-opacity">
+              <div
+                className="absolute inset-0 bg-gray-500 opacity-75"
+                onClick={closeDialog}
+              ></div>
+            </div>
 
+            <span
+              className="hidden sm:inline-block sm:align-middle sm:h-screen"
+              aria-hidden="true"
+            >
+              &#8203;
+            </span>
+
+            <div
+              className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-headline"
+            >
+              <BookConsultationForm />
+            </div>
+          </div>
+        </div>
+   )}
+   </>
+ );
+}
 {/* <p className="font-Proxima-Nova mb-4 font-medium text-2xl md:text-3xl flex flex-row justify-center">
    
    Meet our Doctors

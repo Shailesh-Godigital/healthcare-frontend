@@ -1,5 +1,5 @@
 
-import  { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from "react-hot-toast";
@@ -47,14 +47,14 @@ export default function EditLabform({ userData }: EditLabformProps) {
 
             let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/auth/register`;
 
-            
+
             const newUser = {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
                 email: formData.email,
                 role: formData.role,
                 password: `${formData.firstName}@1234`,
-                status:"pending"
+                status: "pending"
             }
             console.log("🚀 ~ handleSubmit ~ newUser:", newUser)
 
@@ -67,27 +67,27 @@ export default function EditLabform({ userData }: EditLabformProps) {
             // status:"pending"
             // }
             // console.log("🚀 ~ handleSubmit ~ newUserd:", newUserd)
-        
+
             if (!newUser.firstName || !newUser.lastName || !newUser.password || !newUser.email) {
                 toast.error("Please fill all the fields");
                 return;
-              }
-              if (!validateEmail(newUser.email)) {
+            }
+            if (!validateEmail(newUser.email)) {
                 toast("Invalid Email format", {
-                  icon: "❗",
+                    icon: "❗",
                 });
                 return;
-              }
-              if (!validatePassword(newUser.password)) {
+            }
+            if (!validatePassword(newUser.password)) {
                 toast(
-                  "FirstName first letter Must be in Capital ",
-                  {
-                    duration: 4000,
-                    icon: "❗",
-                  }
+                    "FirstName first letter Must be in Capital ",
+                    {
+                        duration: 4000,
+                        icon: "❗",
+                    }
                 );
                 return;
-              }  
+            }
 
 
             let response = await axios.post(apiUrl, newUser);
@@ -101,7 +101,7 @@ export default function EditLabform({ userData }: EditLabformProps) {
 
         } catch (error) {
             console.log(error);
-            
+
             console.error('Error saving data:', error);
         }
     };
@@ -127,13 +127,15 @@ export default function EditLabform({ userData }: EditLabformProps) {
         }
     };
 
-    
+    const roles = ['user', 'superAdmin', 'labVendor', 'labVendor-staff']
+
+
 
     return (
         <>
- <div>
-        <Toaster />
-      </div>
+            <div>
+                <Toaster />
+            </div>
 
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
 
@@ -204,14 +206,18 @@ export default function EditLabform({ userData }: EditLabformProps) {
                                     >
                                         Role
                                     </label>
-                                    <input
-                                        type="text"
+                                    <select
                                         className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                         id="role"
                                         name="role"
                                         value={formData.role}
                                         onChange={handleChange}
-                                    />
+                                    >
+                                        {roles.map((role, index) => (
+                                            <option key={index} value={role}>{role}</option>
+                                        ))}
+                                    </select>
+
                                 </div>
                             </div>
                         </div>
@@ -279,7 +285,7 @@ export default function EditLabform({ userData }: EditLabformProps) {
                 </div >
             </div >
 
-         
+
         </>
     )
 }
@@ -287,8 +293,8 @@ export default function EditLabform({ userData }: EditLabformProps) {
 const validateEmail = (email: string): boolean => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailRegex.test(email);
-  };
-  const validatePassword = (password: string): boolean => {
+};
+const validatePassword = (password: string): boolean => {
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
     return passwordRegex.test(password);
-  };
+};
