@@ -19,13 +19,15 @@ export default function AddPackageForm({ packageData }: EditLabformProps) {
     const titleOptions = ['Blood Test', 'Labs & Scans'];
 
     const [formData, setFormData] = useState<UserData>({
-        _id: packageData._id ,
-        title: packageData.title,
-        subTitle: packageData.subTitle,
-        price: packageData.price,
-        discount: packageData.discount,
-        description: packageData.description
+        _id: packageData._id || '',
+        title: packageData.title || '',
+        subTitle: packageData.subTitle || '',
+        price: packageData.price || '',
+        discount: packageData.discount || '',
+        description: packageData.description || ''
     });
+    console.log("Form dats",formData);
+    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -45,8 +47,7 @@ export default function AddPackageForm({ packageData }: EditLabformProps) {
             let response = await axios.put(apiUrl, formData);
             console.log(response.data);
 
-            // Update the form data with the response data
-            // setFormData(response.data);
+           
 
             alert('Thank you for submitting your form.');
             window.location.reload();
@@ -197,7 +198,9 @@ export default function AddPackageForm({ packageData }: EditLabformProps) {
                         </div>
 
                         <div className="flex justify-center mt-6">
-                            {formData ?
+                            {!(formData._id === '') ?
+                           
+                            
                                 (<button
                                     type="button"
                                     onClick={() => handleEdit()}
