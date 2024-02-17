@@ -1,1 +1,2 @@
-export {default as VendorRegistrationForm} from './VendorRegistrationForm'
+export { default as VendorRegistrationForm } from './VendorRegistrationForm'
+

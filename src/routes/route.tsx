@@ -1,4 +1,3 @@
-/* Route declarations for the app */
 import * as reviews from "../pages";
 
 const routeData = [
@@ -95,7 +94,14 @@ const routeData = [
   },
   {
     id: "route-011",
-    path: "/blood-test/CbcTest",
+    path: "/blood-test/:id",
+    component: reviews.TestPage,
+    requiresAuth: false,
+    roles: []
+  },
+  {
+    id: "route-011",
+    path: "/labs/:id",
     component: reviews.TestPage,
     requiresAuth: false,
     roles: []
