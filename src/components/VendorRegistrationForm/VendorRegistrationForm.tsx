@@ -30,45 +30,45 @@ function VendorRegistrationForm() {
 
     });
     const [selectedOption, setSelectedOption] = useState([]);
-    const [labAvailability, setLabAvailability] = useState([
+    // const [labAvailability, setLabAvailability] = useState([
 
-        {
-            day: "monday",
-            from: " ",
-            to: " "
-        },
-        {
-            day: "tuesday",
-            from: " ",
-            to: " "
-        },
-        {
-            day: "Wednesday",
-            from: " ",
-            to: " "
-        },
-        {
-            day: "thrusday",
-            from: " ",
-            to: " "
-        },
-        {
-            day: "friday",
-            from: " ",
-            to: " "
-        },
-        {
-            day: "saturday",
-            from: " ",
-            to: " "
-        },
-        {
-            day: "sunday",
-            from: " ",
-            to: " "
-        }
+    //     {
+    //         day: "monday",
+    //         from: " ",
+    //         to: " "
+    //     },
+    //     {
+    //         day: "tuesday",
+    //         from: " ",
+    //         to: " "
+    //     },
+    //     {
+    //         day: "Wednesday",
+    //         from: " ",
+    //         to: " "
+    //     },
+    //     {
+    //         day: "thrusday",
+    //         from: " ",
+    //         to: " "
+    //     },
+    //     {
+    //         day: "friday",
+    //         from: " ",
+    //         to: " "
+    //     },
+    //     {
+    //         day: "saturday",
+    //         from: " ",
+    //         to: " "
+    //     },
+    //     {
+    //         day: "sunday",
+    //         from: " ",
+    //         to: " "
+    //     }
 
-    ])
+    // ])
 
     const handlechangeService = (selectedOption: any) => {
         setSelectedOption(selectedOption);

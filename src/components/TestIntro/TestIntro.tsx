@@ -25,8 +25,9 @@ if (decimalPart >= 0 && decimalPart < 0.5) {
                 <div className="container md:m-10 mx-auto flex px-5 md:flex-row flex-col items-center justify-center">
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         <h1 className="title-font text sm:text-4xl text-3xl mb-4 font-medium text-white-900">
-                            {dataPackage.subTitle} &nbsp;
-                            <span>{dataPackage.title}</span> <br className="hidden lg:inline-block" /> near you in delhi
+                            {dataPackage.subTitle} &nbsp; 
+                            {/* <span>{dataPackage.title}</span> */}
+                             <br className="hidden lg:inline-block" /> near you in delhi
                         </h1>
                         <p className="mb-8 leading-relaxed">Thousand+ scans done & counting.. </p>
                         {/* <p className="mb-8 mt-2">{dataPackage.description}</p> */}
@@ -51,7 +52,7 @@ if (decimalPart >= 0 && decimalPart < 0.5) {
             {/* <p className="m-10 p-3 ">{dataPackage.description}</p> */}
 
             <h1 className="font-Proxima-Nova md:mt-10 md:ml-20 md:mb-2 p-4 sm:p-0 font-medium text-xl md:text-2xl pb-4 flex justify-left">
-                Abdominal X-ray Lab List in Delhi
+               Available Lab List in Delhi
             </h1>
 
             {/* <blockquote className="relative ml-20 bg-white mb-2 p-3 border border-gray-400 m-1" style={{ width: "60%", border: "2px solid #4a90e2", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}>
