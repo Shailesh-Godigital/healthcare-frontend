@@ -11,20 +11,21 @@ import { useState } from 'react';
 // import img1 from '../../../public/DoctorImage1.jpeg';
 // import img2 from '../../../public/DoctorImage2.jpeg';
 import BookConsultationForm from '../BookConsultationForm/BookConsultationForm';
+// import imgUrlnew from "/finallogo24.jpg";
 
 
 export default function Banner() {
   const posts = [
     {
       title: "Dr. Vipin Kumar",
-      img:'../../../public/DoctorImage1.jpeg',
+      img:'/DoctorImage1.jpeg',
       content:
         "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT (EMERGENCY,TRAUMA & CRITICAL CARE)",
       price: "499"
     },
     {
       title: " Dr. Mohd Faizan",
-      img:  '../../../public/DoctorImage2.jpeg',
+      img:  'DoctorImage2.jpeg',
       content:
         "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida)   ",
       price: "1499"
@@ -36,12 +37,7 @@ export default function Banner() {
         "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place",
       price: "999"
     },
-    // {
-    //   title: "React Tailwind Card with Grid 4",
-    //   img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
-    //   content:
-    //     "react tailwind css card with image It is a long established fact that a reader will be distracted by the readable content",
-    // },
+
   ];
 
   const [isDialogOpen, setIsDialogOpen] = useState(false)
