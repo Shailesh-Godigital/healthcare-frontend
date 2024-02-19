@@ -1,6 +1,6 @@
 
-import logourl from "/logo.jpg";
-
+// import logourl from "/logo.jpg";
+import imgUrlnew from "/finallogo24.jpg";
 
 export default function Footer() {
     return (
@@ -11,7 +11,7 @@ export default function Footer() {
                     <div className="w-full lg:w-2/5 mb-6 lg:mb-0">
                         <div className="px-6 text-center lg:text-left">
                             <a href="#" className="mx-auto lg:mx-0">
-                                <img className="w-auto h-20 mx-auto lg:mx-0" src={logourl} alt="" />
+                                <img className="w-auto h-20 mx-auto lg:mx-0" src={imgUrlnew} alt="" />
                             </a>
 
                             <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Accufly hires licensed and experienced nurses who are capable of providing high-quality care for your loved ones</p>
