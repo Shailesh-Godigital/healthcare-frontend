@@ -21,7 +21,8 @@ function App() {
   return (
     <div>
       <Router>
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        {/* <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme"> */}
+        <ThemeProvider  storageKey="vite-ui-theme">
           <AppContent  routes={routes}/>
         </ThemeProvider>
       </Router>

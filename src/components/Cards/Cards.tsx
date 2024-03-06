@@ -1,59 +1,134 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Target,
-  Smile,
-  MapPin,
-  Clock,
-  Shield,
-  Heart,
-  LucideIcon,
-} from "lucide-react";
-import { BenefitsData } from "@/data";
-
-interface IconComponents {
-  [key: string]: LucideIcon;
-}
-const iconComponents: IconComponents = {
-  Target,
-  Smile,
-  MapPin,
-  Clock,
-  Shield,
-  Heart,
-};
-
-const Cards: React.FC = () => {
+// import React from 'react'
+import imgUrlnew from "/happy.svg";
+import locationicon from '/locationnew.gif'
+import testReport from '/report.gif'
+import support from '/support.gif'
+function Cards() {
   return (
-    <div className="flex flex-col items-center py-16 gap-8">
-      <h1 className="font-Proxima-Nova font-medium text-2xl md:text-3xl border-b-4 border-blue-600">
-        Why Choose MYDR24
-      </h1>
-      <div className="flex flex-wrap w-screen justify-center gap-2 md:gap-4 px-2 md:px-4">
-        {BenefitsData.map((item, index) => {
-          const IconComponent = iconComponents[item.icon];
+    <>
 
-          return (
-            <Card
-              className="p-2 w-full md:w-[200px] bg-gray-100 dark:bg-[#101929]"
-              key={index}
-            >
-              <CardContent className="flex flex-col justify-between h-full">
-                <div className="flex flex-row justify-center items-center">
-                  {/* <p className="text-xl opacity-50">{`0${index + 1}`}</p> */}
-                  {IconComponent && <IconComponent size={50} />}
-                </div>
-                <div>
-                  <p className="text-base text-center">{item.description}</p>
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+      <section className="text-gray-700 body-font">
+
+        <div className="container px-5 py-14 mx-auto">
+          <h1 className="font-Proxima-Nova pb-5 font-medium text-2xl md:text-3xl border-blue-600 m-5 text-center">
+            Why Choose MYDR24
+          </h1>
+          <div className="flex flex-wrap -m-4 text-center">
+            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                <img
+                  src={imgUrlnew}
+                  className="text-indigo-500 w-16 h-20 inline-block"
+                  alt="Ambulance"
+                />
+                <p className="leading-relaxed title-font font-medium text-md text-gray-900">
+                  Thousands+ Satisfied Customers
+                </p>
+              </div>
+            </div>
+
+            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                <img
+                  src={locationicon}
+                  className="text-indigo-500 w-17 h-20 inline-block"
+                  alt="Ambulance"
+                />
+                <p className="leading-relaxed title-font font-medium text-md text-gray-900">
+                  Presence in 100+ Cities Across India
+                </p>
+              </div>
+            </div>
+            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                <img
+                  src={testReport}
+                  className="text-indigo-500 w-16 h-20 inline-block"
+                  alt="Ambulance"
+                />
+                <p className="leading-relaxed title-font font-medium text-md text-gray-900">
+                  Fast & Accurate Test Reports
+                </p>
+              </div>
+            </div>
+            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                <img
+                  src={support}
+                  className="text-indigo-500 w-16 h-20 inline-block"
+                  alt="Ambulance"
+                />
+                <p className="leading-relaxed title-font font-medium text-md text-gray-900">
+                  24/7 Customer Support
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+// export default Cards
+
+
+// import React from "react";
+// import { Card, CardContent } from "@/components/ui/card";
+// import {
+//   Target,
+//   Smile,
+//   MapPin,
+//   Clock,
+//   Shield,
+//   Heart,
+//   LucideIcon,
+// } from "lucide-react";
+// import { BenefitsData } from "@/data";
+
+// interface IconComponents {
+//   [key: string]: LucideIcon;
+// }
+// const iconComponents: IconComponents = {
+//   Target,
+//   Smile,
+//   MapPin,
+//   Clock,
+//   Shield,
+//   Heart,
+// };
+
+// const Cards: React.FC = () => {
+//   return (
+//     <div className="flex flex-col items-center py-16 gap-8">
+//       <h1 className="font-Proxima-Nova font-medium text-2xl md:text-3xl border-b-4 border-blue-600">
+//         Why Choose MYDR24
+//       </h1>
+//       <div className="flex flex-wrap w-screen justify-center gap-2 md:gap-4 px-2 md:px-4">
+//         {BenefitsData.map((item, index) => {
+//           const IconComponent = iconComponents[item.icon];
+
+//           return (
+//             <Card
+//               className="p-2 w-full md:w-[200px] bg-gray-100 dark:bg-[#101929]"
+//               key={index}
+//             >
+//               <CardContent className="flex flex-col justify-between h-full">
+//                 <div className="flex flex-row justify-center items-center">
+//                   {/* <p className="text-xl opacity-50">{`0${index + 1}`}</p> */}
+//                   {IconComponent && <IconComponent size={50} />}
+//                 </div>
+//                 <div>
+//                   <p className="text-base text-center">{item.description}</p>
+//                 </div>
+//               </CardContent>
+//             </Card>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// };
 // const Cards: React.FC = () => {
 //   return (
 //     <div className="flex flex-col items-center py-4 gap-8">

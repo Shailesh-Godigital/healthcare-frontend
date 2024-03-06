@@ -6,6 +6,7 @@ import {
     Footer,
     EnquiryForm,
     MedicineListing,
+    MedicalEquipment,
   } from "@/components";
   
   export default function Pharmacy() {
@@ -15,6 +16,7 @@ import {
         <Carousel />
         <Cards />
         <MedicineListing/>
+        <MedicalEquipment/>
         {/* <Labs /> */}
         {/* <OfferBanner/> */}
         {/* <Banner /> */}

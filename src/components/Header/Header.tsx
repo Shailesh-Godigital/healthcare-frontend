@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-import { useTheme } from "@/components/theme-provider";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+// import { useTheme } from "@/components/theme-provider";
+// import { Label } from "@/components/ui/label";
+// import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
 
 import { NavigationMenu, Accordion } from "@/components";
 
-import { User2, Phone, Sun, Moon } from "lucide-react";
+import { User2, Phone } from "lucide-react";
 // import imgUrl from "/logo.jpg";
 import imgUrlnew from "/finallogo24.jpg";
-import ambulance from '../../../public/ambulance.gif'
+import ambulance from '../../../public/ambulanceTop.svg'
 import DoctorConsultation from '../../../public/doctorConsultation.png';
 import Pharmacy from '../../../public/Pharmacy.png';
 import Diagnostic from '../../../public/diagnosticTests.png';
@@ -23,7 +23,7 @@ import Backtotop from '../../../public/Backtotop.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
-  const { theme, setTheme } = useTheme();
+  // const { theme, setTheme } = useTheme();
   const [hamburger, setHamburger] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const navigate = useNavigate();
@@ -107,15 +107,15 @@ export default function Header() {
           <div className="">
 
             <div className="flex flex-row justify-between items-center space-x-4">
-              <a href="tel:+91 93117 91119">
-                <img
-                  src={ambulance}
-                  className="object-contain h-10 w-10 rounded-lg ml-1 items-center"
-                  alt="Ambulance"
-                // style={{ backgroundColor: "red" }}
-                />
-                <span className="tab block  " style={{ fontSize: '0.60rem', color: "white", background: "red" }}>Ambulance+  </span>
-              </a>
+            <a href="tel:+91 93117 91119">
+  <img
+    src={ambulance}
+    className="object-contain h-8 w-10 rounded-lg ml-1 items-center animate-bounce"
+    alt="Ambulance"
+  />
+</a>
+
+
               {login !== "true" ? (
                 <a href="/login">
                   <div className="flex flex-row items-center space-x-1">
@@ -167,7 +167,7 @@ export default function Header() {
                 </div>
               </a>
 
-              <div>
+              {/* <div>
                 <Switch
                   id="darkmode"
                   checked={theme === "dark"}
@@ -179,7 +179,7 @@ export default function Header() {
                 <Label htmlFor="darkmode" className="cursor-pointer">
                   {theme == "dark" ? <Sun /> : <Moon />}
                 </Label>
-              </div>
+              </div> */}
 
 
               <div

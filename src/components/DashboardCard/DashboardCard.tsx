@@ -7,7 +7,7 @@ import support from '../../../public/support.png'
 import profile from '../../../public/profile.png'
 import invoice from '../../../public/invoice.png'
 import booking from '../../../public/booking.png'
-
+import doctor from '../../../public/doctornew.png'
 // import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 // import { Card } from '../ui/card'
@@ -18,6 +18,8 @@ export default function DashboardCard() {
 
     const cardData = [
         { id: 101, name: 'Vendor Registration', image: labvendor, link: '/labVendorRegistration', roles: ['superAdmin'] },
+        { id: 109, name: 'Doctor Registration', image: doctor, link: '/registeredDoctor', roles: ['superAdmin'] },
+
         { id: 102, name: 'Packages', image: packagelogo, link: '/package', roles: ['superAdmin'] },
         { id: 103, name: 'Profile', image: profile, link: '/profile', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 104, name: 'User Management', image: userManagement, link: '/userManagement', roles: ['superAdmin', 'labVendor'] },

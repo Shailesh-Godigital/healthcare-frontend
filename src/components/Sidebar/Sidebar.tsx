@@ -23,6 +23,7 @@ export default function Sidebar() {
 
     const cardData = [
         { id: 101, name: 'Vendor Registration', link: '/labVendorRegistration', roles: ['superAdmin'] },
+        { id: 109, name: 'Doctor Management', link: '/registeredDoctor', roles: ['superAdmin'] },
         { id: 102, name: 'Packages', link: '/Package', roles: ['superAdmin'] },
         { id: 103, name: 'Profile', link: '/profile', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 104, name: 'User Management', link: '/userManagement', roles: ['superAdmin', 'labVendor'] },

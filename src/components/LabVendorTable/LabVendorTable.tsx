@@ -145,12 +145,12 @@ export default function LabVendorTable(props: any) {
                       <option value="rejected">Rejected</option>
                     </select>
                   </th>
-                  <th
+                  {/* <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
                     Availability
-                  </th>
+                  </th> */}
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -198,7 +198,7 @@ export default function LabVendorTable(props: any) {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">{vendorData.licenceNumber}</div>
                       {/* <div className="text-sm text-gray-500">{vendorData.labServices} || " "</div> */}
-                      <div className="text-sm text-gray-500">working on it</div>
+                      {/* <div className="text-sm text-gray-500">working on it</div> */}
 
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -216,14 +216,14 @@ export default function LabVendorTable(props: any) {
                       </span>
                     </td>
 
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {"working on it"}
-                    </td>
+                    </td> */}
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {vendorData.labDocument}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {vendorData.remark} || " "
+                      {vendorData.remark?vendorData.remark: ""} 
                     </td>
 
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

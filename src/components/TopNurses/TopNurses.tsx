@@ -64,6 +64,55 @@ export default function Banner() {
 
                                     <h1 className="px-2 text-sm">{items.location}</h1>
                                 </div>
+                                <span className="relative flex items-center justify-center w-full text-xl m-2  h-full">Book  Consult Now</span>
+                                <div className="flex flex-row sm:flex- space-y- sm:space-x-6 sm:space-y- m-4">
+                                    <a href="#_" className="relative mr-2 inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group">
+                                        <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+                                        <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+                                            <img src="/doctorConsultation.png" className="w-10 h-10" alt="Doctor Consultation" />
+                                            <span className="tab block text-xs hidden md:block text-center" style={{ fontSize: '0.60rem' }}>Online </span>
+                                        </span>
+                                    </a>
+                                    <a href="#_" className="relative mr-2 ml-2 inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group">
+                                        <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+                                        <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+                                            <img src="/hospitallogo.svg" className="w-10 h-10" alt="Hospital" />
+                                            <span className="tab block text-xs hidden md:block" style={{ fontSize: '0.60rem' }}>Hospital </span>
+                                        </span>
+                                    </a>
+                                    <a href="#_" className="relative ml-2 inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group">
+                                        <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+                                        <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+                                            <img src="/doctorHome.svg" className="w-10 h-10" alt="Doctor Home" />
+                                            <span className="tab block text-xs hidden md:block text-center" style={{ fontSize: '0.60rem' }}>Home </span>
+                                        </span>
+                                    </a>
+                                </div>
+
+
+
+                                {/* <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 m-4">
+                                    <div className="flex flex-row sm:flex-row sm:space-x-4 sm:space-y-0 w-full">
+                                        <a href="#_" className="relative inline-flex mt-1 p-2 items-center px- text-center overflow-hidden text-sm text-indigo-600 border-2 border-indigo-600 rounded-full hover:text-white group hover:bg-gray-50 w-full">
+                                            <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                                            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease"></span>
+                                            <span className="relative flex items-center justify-center w-full h-full">Book Video Consult</span>
+                                        </a>
+                                        <a href="#_" className="relative inline-flex mt-1 p-2 items-center justify-center text-center overflow-hidden text-sm text-indigo-600 border-2 border-indigo-600 rounded-full hover:text-white group hover:bg-gray-50 w-full">
+                                            <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                                            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease"></span>
+                                            <span className="relative flex items-center justify-center w-full h-full">Book Hospital Visit</span>
+                                        </a>
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <a href="#_" className="relative inline-flex mt-1 p-2 items-center px- text-center overflow-hidden text-sm text-indigo-600 border-2 border-indigo-600 rounded-full hover:text-white group hover:bg-gray-50 w-full">
+                                            <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                                            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease"></span>
+                                            <span className="relative flex items-center justify-center w-full h-full">Book Home Consult</span>
+                                        </a>
+                                    </div>
+                                </div> */}
+
 
                                 {/* <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                                 <svg aria-label="email icon" className="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

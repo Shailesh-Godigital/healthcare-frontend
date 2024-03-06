@@ -178,7 +178,7 @@ function OurVision() {
                             </div>
                         </div>
                         <div aria-hidden="true" className="mt-10 lg:mt-0">
-                            <img width="500" height="500" src="https://www.aimscare.com/wp-content/uploads/2019/04/mission-vision-values-graphic.png" className="mx-auto rounded-lg shadow-lg dark-bg-gray-500" style={{ color: "transparent" }} />
+                            <img width="500" height="500" src="https://www.aimscare.com/wp-content/uploads/2019/04/mission-vision-values-graphic.png" className="mx-auto rounded-lg  dark-bg-gray-500" style={{ color: "transparent" }} />
                         </div>
                     </div>
                 </div>

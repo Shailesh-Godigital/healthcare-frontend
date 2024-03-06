@@ -69,7 +69,8 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
                     email: updatedFormData.labEmail,
                     role: "labVendor",
                     password: `${trimmedFirstName}@1234`,
-                    status: "approved"
+                    status: "approved",
+                    labId:updatedFormData.id
                 };
                 console.log("🚀 ~ handleEdit ~ newUser:", newUser)
 
@@ -164,7 +165,7 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
                                     />
                                 </div>
                             </div>
-                            <div className="w-full lg:w-6/12 px-4">
+                            {/* <div className="w-full lg:w-6/12 px-4">
                                 <div className="relative w-full mb-3">
                                     <label
                                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -181,7 +182,7 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
                                         onChange={handleChange}
                                     />
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="w-full lg:w-6/12 px-4">
                                 <div className="relative w-full mb-3">
                                     <label

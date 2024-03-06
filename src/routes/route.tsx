@@ -160,7 +160,21 @@ const routeData = [
     path: "/profile",
     component: reviews.EditProfile,
     requiresAuth: true,
-    roles: ['superAdmin','user'],
+    roles: ['superAdmin','user','labVendor'],
+  },
+  {
+    id: "route-017",
+    path: "/doctorRegistration",
+    component: reviews.doctorRegistraion,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-018",
+    path: "/registeredDoctor",
+    component: reviews.doctorRegistrationDashboard,
+    requiresAuth: false,
+    roles: [],
   },
 ];
 

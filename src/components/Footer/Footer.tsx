@@ -87,6 +87,7 @@ export default function Footer() {
                                 <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
                                 <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
                                 <a href="/labRegistration" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Lab Vendor Registration</a>
+                                <a href="/doctorRegistration" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Doctor Registration</a>
                             </div>
 
                             {/* <div className="text-center sm:text-left">

@@ -1,0 +1,16 @@
+@layer components {
+    .animate-slide-in {
+      @apply animate-slideIn;
+    }
+  }
+  
+  @layer utilities {
+    @keyframes slideIn {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-slideIn {
+      animation: slideIn 2s ease-in-out;
+    }
+  }
+  

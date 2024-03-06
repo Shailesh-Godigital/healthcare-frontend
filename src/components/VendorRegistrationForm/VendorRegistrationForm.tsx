@@ -358,7 +358,7 @@ function VendorRegistrationForm() {
                                 </div>
                             </div>
 
-                            <div className="w-full lg:w-4/12 px-4">
+                            {/* <div className="w-full lg:w-4/12 px-4">
                                 <div className="relative w-full mb-3">
                                     <label
                                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -367,7 +367,7 @@ function VendorRegistrationForm() {
                                         lab Availability
                                     </label>
                                     <div className="flex flex-wrap items-center">
-                                        {/* Mon */}
+                                      
 
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
                                             <input
@@ -384,13 +384,13 @@ function VendorRegistrationForm() {
                                                 onChange={handleInputChange}
 
                                             >
-                                                {/* Options for Start Time */}
+                                                
                                                 <option value="08:00 AM">08:00 AM</option>
                                                 <option value="09:00 AM">09:00 AM</option>
                                                 <option value="10:00 AM">10:00 AM</option>
                                                 <option value="11:00 AM">11:00 AM</option>
                                                 <option value="12:00 PM">12:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                             <span className="text-blueGray-600">to</span>
                                             <select
@@ -398,13 +398,13 @@ function VendorRegistrationForm() {
                                                 name="to"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for End Time */}
+                                              
                                                 <option value="05:00 PM">05:00 PM</option>
                                                 <option value="06:00 PM">06:00 PM</option>
                                                 <option value="07:00 PM">07:00 PM</option>
                                                 <option value="08:00 PM">08:00 PM</option>
                                                 <option value="09:00 PM">09:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                         </div>
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
@@ -421,13 +421,13 @@ function VendorRegistrationForm() {
                                                 name="from"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for Start Time */}
+                                                
                                                 <option value="08:00 AM">08:00 AM</option>
                                                 <option value="09:00 AM">09:00 AM</option>
                                                 <option value="10:00 AM">10:00 AM</option>
                                                 <option value="11:00 AM">11:00 AM</option>
                                                 <option value="12:00 PM">12:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                             <span className="text-blueGray-600">to</span>
                                             <select
@@ -435,13 +435,13 @@ function VendorRegistrationForm() {
                                                 name="to"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for End Time */}
+                                              
                                                 <option value="05:00 PM">05:00 PM</option>
                                                 <option value="06:00 PM">06:00 PM</option>
                                                 <option value="07:00 PM">07:00 PM</option>
                                                 <option value="08:00 PM">08:00 PM</option>
                                                 <option value="09:00 PM">09:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                         </div>
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
@@ -458,13 +458,13 @@ function VendorRegistrationForm() {
                                                 name="from"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for Start Time */}
+                                                
                                                 <option value="08:00 AM">08:00 AM</option>
                                                 <option value="09:00 AM">09:00 AM</option>
                                                 <option value="10:00 AM">10:00 AM</option>
                                                 <option value="11:00 AM">11:00 AM</option>
                                                 <option value="12:00 PM">12:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                             <span className="text-blueGray-600">to</span>
                                             <select
@@ -472,13 +472,13 @@ function VendorRegistrationForm() {
                                                 name="to"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for End Time */}
+                                              
                                                 <option value="05:00 PM">05:00 PM</option>
                                                 <option value="06:00 PM">06:00 PM</option>
                                                 <option value="07:00 PM">07:00 PM</option>
                                                 <option value="08:00 PM">08:00 PM</option>
                                                 <option value="09:00 PM">09:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                         </div>
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
@@ -495,13 +495,13 @@ function VendorRegistrationForm() {
                                                 name="from"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for Start Time */}
+                                                
                                                 <option value="08:00 AM">08:00 AM</option>
                                                 <option value="09:00 AM">09:00 AM</option>
                                                 <option value="10:00 AM">10:00 AM</option>
                                                 <option value="11:00 AM">11:00 AM</option>
                                                 <option value="12:00 PM">12:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                             <span className="text-blueGray-600">to</span>
                                             <select
@@ -509,13 +509,13 @@ function VendorRegistrationForm() {
                                                 name="to"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for End Time */}
+                                              
                                                 <option value="05:00 PM">05:00 PM</option>
                                                 <option value="06:00 PM">06:00 PM</option>
                                                 <option value="07:00 PM">07:00 PM</option>
                                                 <option value="08:00 PM">08:00 PM</option>
                                                 <option value="09:00 PM">09:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                         </div>
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
@@ -532,13 +532,13 @@ function VendorRegistrationForm() {
                                                 name="from"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for Start Time */}
+                                                
                                                 <option value="08:00 AM">08:00 AM</option>
                                                 <option value="09:00 AM">09:00 AM</option>
                                                 <option value="10:00 AM">10:00 AM</option>
                                                 <option value="11:00 AM">11:00 AM</option>
                                                 <option value="12:00 PM">12:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                             <span className="text-blueGray-600">to</span>
                                             <select
@@ -546,13 +546,13 @@ function VendorRegistrationForm() {
                                                 name="to"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for End Time */}
+                                              
                                                 <option value="05:00 PM">05:00 PM</option>
                                                 <option value="06:00 PM">06:00 PM</option>
                                                 <option value="07:00 PM">07:00 PM</option>
                                                 <option value="08:00 PM">08:00 PM</option>
                                                 <option value="09:00 PM">09:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                         </div>
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
@@ -569,13 +569,13 @@ function VendorRegistrationForm() {
                                                 name="from"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for Start Time */}
+                                                
                                                 <option value="08:00 AM">08:00 AM</option>
                                                 <option value="09:00 AM">09:00 AM</option>
                                                 <option value="10:00 AM">10:00 AM</option>
                                                 <option value="11:00 AM">11:00 AM</option>
                                                 <option value="12:00 PM">12:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                             <span className="text-blueGray-600">to</span>
                                             <select
@@ -583,13 +583,13 @@ function VendorRegistrationForm() {
                                                 name="to"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for End Time */}
+                                              
                                                 <option value="05:00 PM">05:00 PM</option>
                                                 <option value="06:00 PM">06:00 PM</option>
                                                 <option value="07:00 PM">07:00 PM</option>
                                                 <option value="08:00 PM">08:00 PM</option>
                                                 <option value="09:00 PM">09:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                         </div>
                                         <div className="flex items-center mb-2 w-full sm:w-auto sm:mr-4">
@@ -606,13 +606,13 @@ function VendorRegistrationForm() {
                                                 name="from"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for Start Time */}
+                                                
                                                 <option value="08:00 AM">08:00 AM</option>
                                                 <option value="09:00 AM">09:00 AM</option>
                                                 <option value="10:00 AM">10:00 AM</option>
                                                 <option value="11:00 AM">11:00 AM</option>
                                                 <option value="12:00 PM">12:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                             <span className="text-blueGray-600">to</span>
                                             <select
@@ -620,25 +620,25 @@ function VendorRegistrationForm() {
                                                 name="to"
                                                 onChange={handleInputChange}
                                             >
-                                                {/* Options for End Time */}
+                                              
                                                 <option value="05:00 PM">05:00 PM</option>
                                                 <option value="06:00 PM">06:00 PM</option>
                                                 <option value="07:00 PM">07:00 PM</option>
                                                 <option value="08:00 PM">08:00 PM</option>
                                                 <option value="09:00 PM">09:00 PM</option>
-                                                {/* Add more options as needed */}
+                                            
                                             </select>
                                         </div>
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> */}
 
 
                         </div>
 
 
-                        <div className="flex justify-center items-center">
+                        <div className="flex justify-center mt-8 items-center">
                             <button
                                 type="submit"
                                 className="mt-2 px-5 p-2 text-sm rounded-lg border-blue-600 bg-blue-600 hover:scale-105 shadow text-white"

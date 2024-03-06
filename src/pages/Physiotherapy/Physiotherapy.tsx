@@ -1,9 +1,7 @@
 import {
   Header,
-
   FAQ,
   Footer,
-
   Cards,
 } from "@/components";
 // import { CardDoctor } from "@/components/CardDoctor";

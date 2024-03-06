@@ -6,7 +6,7 @@ function PhysiotherapyPackage() {
             <h1 className="font-Proxima-Nova text-center font-medium text-xl md:text-3xl border-b-1 border-blue-600">
             PROBLEMS TREATED AT MYDR24 PHYSIOTHERAPY CLINIC
             </h1>
-            <h1 className=" text-center mt-2 text-sm md:text-3xl border-b-1 border-blue-600">
+            <h1 className=" text-center mt-2 text-sm md:text-2xl border-b-1 border-blue-600">
             We are expert in the following areas.
             </h1>
             <div className="flex items-center justify-center w-screen min-h-screen p-10">
@@ -41,7 +41,7 @@ function PhysiotherapyPackage() {
                     </div>
 
                     <div className="flex flex-col rounded-lg p-2 m-2">
-                        <img src='https://www.pennmedicine.org/news/-/media/images/pr%20news/inside%20pm/system%20news/2019/march/pm%20at%20home/cardiac%20rehabilitation.ashx?la=en' className="w-full h-full" />
+                        <img src='https://cdn2.hubspot.net/hubfs/281126/Cardiac%20Rehab%20Phases.jpeg' className="w-full h-full" />
                         <div className="flex flex-col items-start mt-2">
                             <h4 className="text-l font-semibold">Cardiac Physiotherapy</h4>
 

@@ -18,23 +18,23 @@ export default function Banner() {
   const posts = [
     {
       title: "Dr. Vipin Kumar",
-      img:'/DoctorImage1.jpeg',
+      img: '/DoctorImage1.jpeg',
       content:
         "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT (EMERGENCY,TRAUMA & CRITICAL CARE)",
       price: "499"
     },
     {
       title: " Dr. Mohd Faizan",
-      img:  'DoctorImage2.jpeg',
+      img: 'DoctorImage2.jpeg',
       content:
-        "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida)   ",
+        "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida)  &nbsp;&nbsp;&nbsp;&nbsp; ",
       price: "1499"
     },
     {
       title: "Dr. Satish Kumar",
       img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
-        "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place",
+        "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place &nbsp;",
       price: "999"
     },
 
@@ -56,7 +56,7 @@ export default function Banner() {
         <h1 className="font-Proxima-Nova font-medium text-2xl md:text-3xl border-b-4 border-blue-600">
           Meet our Doctors
         </h1>
-        <div className="grid gap-5 lg:grid-cols-3 ">
+        {/* <div className="grid gap-5 lg:grid-cols-3 ">
           {posts.map((items, key) => (
             <div className="w-full  shadow-md lg:max-w-sm " key={key}>
               <img
@@ -69,9 +69,7 @@ export default function Banner() {
                   {items.title}
                 </h4>
                 <p className="mb-2 leading-normal text-center ">{items.content}</p>
-                {/* <h3 className="text-xl font-semibold text-blue-600 text-center">
-                  Starts at <span>&#8377;</span>{items.price}
-                </h3> */}
+         
               </div>
               <div className="m-2 flex items-center space-x-8">
                 <button
@@ -84,8 +82,63 @@ export default function Banner() {
                   onClick={openDialog}
                   className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white"
                 >
-                  Book Hospital Visit
+                   Hospital/Home Visit
                 </button>
+              </div>
+            </div>
+          ))}
+        </div> */}
+        <div className="grid gap-5 lg:grid-cols-3 ">
+          {posts.map((items) => (
+            <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+              <img className="object-cover object-center w-full h-56" alt="avatar" src={items.img} />
+
+              <div className="px-6 py-4">
+                <h1 className="text-xl font-semibold text-gray-800 dark:text-white">  {items.title}</h1>
+
+                <p className="py-2 text-gray-700 dark:text-gray-400">  {items.content}</p>
+
+                {/* <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+                                    <svg aria-label="suitcase icon" className="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 11H10V13H14V11Z" /><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" />
+                                    </svg>
+
+                                    <h1 className="px-2 text-sm">Experiance 4-5 years</h1>
+                                </div> */}
+
+                {/* <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
+                                    <svg aria-label="location pin icon" className="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2721 10.2721C16.2721 12.4813 14.4813 14.2721 12.2721 14.2721C10.063 14.2721 8.27214 12.4813 8.27214 10.2721C8.27214 8.063 10.063 6.27214 12.2721 6.27214C14.4813 6.27214 16.2721 8.063 16.2721 10.2721ZM14.2721 10.2721C14.2721 11.3767 13.3767 12.2721 12.2721 12.2721C11.1676 12.2721 10.2721 11.3767 10.2721 10.2721C10.2721 9.16757 11.1676 8.27214 12.2721 8.27214C13.3767 8.27214 14.2721 9.16757 14.2721 10.2721Z" /><path fill-rule="evenodd" clip-rule="evenodd" d="M5.79417 16.5183C2.19424 13.0909 2.05438 7.3941 5.48178 3.79418C8.90918 0.194258 14.6059 0.0543983 18.2059 3.48179C21.8058 6.90919 21.9457 12.606 18.5183 16.2059L12.3124 22.7241L5.79417 16.5183ZM17.0698 14.8268L12.243 19.8965L7.17324 15.0698C4.3733 12.404 4.26452 7.9732 6.93028 5.17326C9.59603 2.37332 14.0268 2.26454 16.8268 4.93029C19.6267 7.59604 19.7355 12.0269 17.0698 14.8268Z" />
+                                    </svg>
+
+                                    <h1 className="px-2 text-sm">{items.location}</h1>
+                                </div> */}
+                <span className="relative flex items-center justify-center w-full text-xl m-2 items-bold h-full">Book  Consult Now</span>
+                <div className="flex flex-row sm:flex- space-y- sm:space-x-6 sm:space-y- m-4">
+                  <a href="#_" className="relative mr- inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group" onClick={openDialog}>
+                    <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+                    <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+                      <img src="/doctorConsultation.png" className="w-10 h-10" alt="Doctor Consultation" />
+                      <span className="tab block hidden md:block text-xs text-center md:text-center" style={{ fontSize: '0.60rem' }}>Online </span>
+
+                    </span>
+                  </a>
+                  <a href="#_" className="relative ml-2  inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group" onClick={openDialog}>
+                    <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+                    <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+                      <img src="/hospitallogo.svg" className="w-10 h-10" alt="Hospital" />
+                      <span className="tab block hidden md:block text-xs" style={{ fontSize: '0.60rem' }}>Hospital </span>
+                    </span>
+                  </a>
+                  <a href="#_" className="relative ml-2 inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group" onClick={openDialog}>
+                    <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+                    <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+                      <img src="/doctorHome.svg" className="w-10 h-10" alt="Doctor Home" />
+                      <span className="tab block hidden md:block text-xs text-center" style={{ fontSize: '0.60rem' }}>Home </span>
+                    </span>
+                  </a>
+                </div>
+
               </div>
             </div>
           ))}
@@ -94,21 +147,21 @@ export default function Banner() {
 
       {isDialogOpen && (
         <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div className="fixed inset-0 transition-opacity">
               <div
                 className="absolute inset-0 bg-gray-500 opacity-75"
                 onClick={closeDialog}
               ></div>
             </div>
-
+      
             <span
               className="hidden sm:inline-block sm:align-middle sm:h-screen"
               aria-hidden="true"
             >
               &#8203;
             </span>
-
+      
             <div
               className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
               role="dialog"
@@ -119,9 +172,10 @@ export default function Banner() {
             </div>
           </div>
         </div>
-   )}
-   </>
- );
+      )}
+      
+    </>
+  );
 }
 {/* <p className="font-Proxima-Nova mb-4 font-medium text-2xl md:text-3xl flex flex-row justify-center">
    
