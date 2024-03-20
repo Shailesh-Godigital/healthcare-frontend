@@ -176,6 +176,48 @@ const routeData = [
     requiresAuth: false,
     roles: [],
   },
+  {
+    id: "route-019",
+    path: "/ourTieups/hospitalTieups",
+    component: reviews.HospitalTieups,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-020",
+    path: "/ourTieups/corporatesTieups",
+    component: reviews.CorporateTieups,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-021",
+    path: "/ourTieups/schoolTieups",
+    component: reviews.SchoolTieups,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-022",
+    path: "/ourTieups/societyTieups",
+    component: reviews.SocietyTieups,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-023",
+    path: "/patientStory",
+    component: reviews.PatientStory,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-024",
+    path: "/surgery",
+    component: reviews.SurgeryPage,
+    requiresAuth: false,
+    roles: [],
+  },
 ];
 
 export default routeData;

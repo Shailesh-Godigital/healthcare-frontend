@@ -8,7 +8,7 @@ export default function EnquiryForm() {
             <div className="mx-auto">
               <div className="flex flex-wrap justify-left md:ml-10 ml-2">
                 <div className="w-full lg:w-10/12 px-4">
-                  <div className="flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200">
+                  <div className="flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-800">
                     <div className="flex-auto p-5 ">
                       <h4 className="text-2xl font-semibold">
                         Got an issue? Want to send feedback?.
@@ -72,7 +72,7 @@ export default function EnquiryForm() {
                       </div>
                       <div className="text-center mt-6">
                         <button
-                          className="bg-blue-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          className="bg-indigo-900 text-white active:bg-indigo-900 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                           type="button"
                         >
                           Send Message
@@ -86,9 +86,10 @@ export default function EnquiryForm() {
           </section>
         </div>
 
-        <div className="lg:w-8/12 w-full lg:mb-0 mr-10 mt-2 rounded-lg overflow-hidden">
+        <div className="lg:w-8/12 w-full lg:mb-0 mr-10 mt-2 rounded-lg overflow-hidden hidden md:block">
           <img alt="feature" className="object-cover object-center h-50 w-50 lg:h-auto lg:w-auto" src="/newEnquiryBanner.jpg" />
         </div>
+        
 
 
       </div>

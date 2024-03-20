@@ -86,6 +86,7 @@ export default function Footer() {
                                 <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
                                 <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
                                 <a href="#" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                                <a href="/patientStory" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">PatientStory</a>
                                 <a href="/labRegistration" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Lab Vendor Registration</a>
                                 <a href="/doctorRegistration" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Doctor Registration</a>
                             </div>
@@ -104,6 +105,7 @@ export default function Footer() {
                                 <a href="/diagnostic" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Diagnostic </a>
                                 <a href="/physiotherapy" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Physiotherapy</a>
                                 <a href="/pharmacy" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Pharmacy</a>
+                                <a href="/surgery" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Surgery </a>
                             </div>
 
                             <div className="text-center sm:text-left">
@@ -115,12 +117,14 @@ export default function Footer() {
                     </div>
 
                 </div>
-
+                
                 <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
 
-                <div>
-                    <p className="text-center text-gray-500 dark:text-gray-400">© MyDr24 2023 - All rights reserved</p>
+                <div className="mb-8">
+                    {/* <p className="text-center text-gray-500 dark:text-gray-400 ">Powered</p> */}
+                    <p className="text-center text-gray-500 dark:text-gray-400 ">© MyDr24 2024 - All rights reserved   || Powered by Accufly Healthcare Pvt.Ltd.</p>
                 </div>
+                
             </div>
         </footer>
         // <footer className=" w-full bg-white dark:bg-[#020817] mt-12 px-8 ">

@@ -1,13 +1,14 @@
 // import React from 'react'
 import imgUrlnew from "/happy.svg";
-import locationicon from '/locationnew.gif'
+// import locationicon from '/locationnew.gif'
+import allInOne from '/allinone.gif'
 import testReport from '/report.gif'
 import support from '/support.gif'
 function Cards() {
   return (
     <>
 
-      <section className="text-gray-700 body-font">
+      <section className="text-gray-700 body-font z-0">
 
         <div className="container px-5 py-14 mx-auto">
           <h1 className="font-Proxima-Nova pb-5 font-medium text-2xl md:text-3xl border-blue-600 m-5 text-center">
@@ -18,7 +19,7 @@ function Cards() {
               <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                 <img
                   src={imgUrlnew}
-                  className="text-indigo-500 w-16 h-20 inline-block"
+                  className="text-indigo-500 w-12 h-16 md:w-16 inline-block"
                   alt="Ambulance"
                 />
                 <p className="leading-relaxed title-font font-medium text-md text-gray-900">
@@ -27,15 +28,15 @@ function Cards() {
               </div>
             </div>
 
-            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div className="p-4 md:w-1/4 sm:w-1/2 w-full z-0">
               <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                 <img
-                  src={locationicon}
-                  className="text-indigo-500 w-17 h-20 inline-block"
+                  src={allInOne}
+                  className="text-indigo-500 w-12 h-16 md:w-16 inline-block z-0"
                   alt="Ambulance"
                 />
                 <p className="leading-relaxed title-font font-medium text-md text-gray-900">
-                  Presence in 100+ Cities Across India
+                  All-in-One Complete Healthcare
                 </p>
               </div>
             </div>
@@ -43,7 +44,7 @@ function Cards() {
               <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                 <img
                   src={testReport}
-                  className="text-indigo-500 w-16 h-20 inline-block"
+                  className="text-indigo-500 w-12 h-16 md:w-16 inline-block"
                   alt="Ambulance"
                 />
                 <p className="leading-relaxed title-font font-medium text-md text-gray-900">
@@ -55,7 +56,7 @@ function Cards() {
               <div className="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                 <img
                   src={support}
-                  className="text-indigo-500 w-16 h-20 inline-block"
+                  className="text-indigo-500 w-12 h-16 md:w-16 inline-block"
                   alt="Ambulance"
                 />
                 <p className="leading-relaxed title-font font-medium text-md text-gray-900">

@@ -10,10 +10,22 @@ import {
   OfferBanner,
   MedicineListing,
   MedicalEquipment,
+  HomeTestimonial,
 } from "@/components";
 import OurVision from "@/components/OurVision/OurVision";
+import {  useRef } from "react";
 
 export default function HomePage() {
+  const enquiryScroll = useRef<HTMLDivElement>(null);
+
+
+  const scrollToEnquiryForm = () => {
+    
+    if(enquiryScroll.current){
+      enquiryScroll.current.scrollIntoView({behavior:"smooth",block:"start"});
+    }
+  }
+
   return (
     <div>
       <Header />
@@ -21,12 +33,13 @@ export default function HomePage() {
       <Cards />
       <OurVision/>
       <MedicineListing/>
-      <MedicalEquipment/>
+      <MedicalEquipment scrollToBottom={scrollToEnquiryForm}/>
       <Labs />
       <OfferBanner/>
       <Banner />
       <FAQ />
-      <EnquiryForm/>
+      <HomeTestimonial/>
+      <div ref={enquiryScroll}><EnquiryForm /></div>
       <Footer />
     </div>
   );

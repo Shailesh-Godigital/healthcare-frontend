@@ -1,7 +1,7 @@
 // import React from 'react'
-import doctor from '../../../public/visionicon.png';
-import value from '../../../public/value.png';
-import mission from '../../../public/mission.png';
+// import doctor from '../../../public/visionicon.png';
+// import value from '../../../public/value.png';
+// import mission from '../../../public/mission.png';
 
 function OurVision() {
     return (
@@ -129,14 +129,14 @@ function OurVision() {
                 />
             </div> */}
 
-            <section className="">
-                <div className="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
-                    {/* <div>
+            <section className="md:mt-10 md:mb-10">
+
+                {/* <div>
                         <h2 className="text-3xl font-bold text-center sm:text-5xl">New Features</h2>
                         <p className="max-w-3xl mx-auto mt-4 text-xl text-center ">Explore the latest features that enhance your learning experience and make it even more exciting.</p>
                     </div> */}
-                    <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
-                        <div>
+
+                {/* <div>
                             <div className="mt-4 space-y-12">
                                 <div className="flex">
                                     <img
@@ -176,12 +176,29 @@ function OurVision() {
                                 </div>
 
                             </div>
-                        </div>
-                        <div aria-hidden="true" className="mt-10 lg:mt-0">
-                            <img width="500" height="500" src="https://www.aimscare.com/wp-content/uploads/2019/04/mission-vision-values-graphic.png" className="mx-auto rounded-lg  dark-bg-gray-500" style={{ color: "transparent" }} />
+                        </div> */}
+                <div className="hidden md:block">
+                    <img src="/vision.jpg" height="1200" width="1200" className="mx-auto rounded-lg dark:bg-gray-500" />
+                </div>
+
+                <div className="md:hidden">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-4">
+                                <img src="/vision1.png" height="400" width="400" className="mx-auto rounded-lg dark-bg-gray-500" />
+                            </div>
+                            <div className="col-md-4">
+                                <img src="/vision2.png" height="400" width="400" className="mx-auto rounded-lg dark-bg-gray-500" />
+                            </div>
+                            <div className="col-md-4">
+                                <img src="/vision3.png" height="400" width="400" className="mx-auto rounded-lg dark-bg-gray-500" />
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+
             </section>
 
 

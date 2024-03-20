@@ -34,6 +34,7 @@ export default function Header() {
     e.preventDefault();
     setHamburger((prev) => !prev);
   };
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -107,13 +108,13 @@ export default function Header() {
           <div className="">
 
             <div className="flex flex-row justify-between items-center space-x-4">
-            <a href="tel:+91 93117 91119">
-  <img
-    src={ambulance}
-    className="object-contain h-8 w-10 rounded-lg ml-1 items-center animate-bounce"
-    alt="Ambulance"
-  />
-</a>
+              <a href="tel:+91 93117 91119">
+                <img
+                  src={ambulance}
+                  className="object-contain h-8 w-10 rounded-lg ml-1 items-center animate-pulse "
+                  alt="Ambulance"
+                />
+              </a>
 
 
               {login !== "true" ? (
@@ -157,7 +158,7 @@ export default function Header() {
                 </div>
               )
               }
-              <a className="hidden md:block">
+              <a className="hidden md:block" href="tel:+91 93117 91119" title="Call us">
                 <div className="flex flex-row items-center space-x-1">
                   <Phone size={20} absoluteStrokeWidth />
                   <div className="flex flex-col">
@@ -197,36 +198,37 @@ export default function Header() {
 
             </div>
             <div className="md:block lg:hidden xl:hidden 2xl:hidden cursor-pointer">
-              <section
-                className="block fixed bottom-0 inset-x-0 z-50 shadow-lg text-gray-800 bg-white-700 dark:bg-dark backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30 dark:text-gray-400 border-t-2 border-royal/20">
+              <section className="block fixed bottom-0 inset-x-0 z-50 shadow-lg text-gray-800 bg-white dark:bg-white backdrop-blur-lg bg-opacity-100 dark:bg-opacity-30 dark:text-gray-400 border-t-2 border-royal/20">
                 <div id="tabs" className="flex justify-between">
                   <a href="/doctor-Consultation" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
                     <img src={DoctorConsultation} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
-                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Doctor </span>
+                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Doctor</span>
                   </a>
 
                   <a href="/pharmacy" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
-                    <img src={Pharmacy} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
+                    <img src={Pharmacy} alt="Pharmacy" className="max-w-full h-6 mb-1" />
                     <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Medicine</span>
                   </a>
 
-
                   <a href="/diagnostic" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
-                    <img src={Diagnostic} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
+                    <img src={Diagnostic} alt="Diagnostic" className="max-w-full h-6 mb-1" />
                     <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Diagnostic</span>
                   </a>
+
                   <a href="/surgeryPlanning" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
-                    <img src={Ambulance} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
+                    <img src={Ambulance} alt="Surgery Planning" className="max-w-full h-6 mb-1" />
                     <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Surgery</span>
                   </a>
-                  <a href="/" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
-                    <img src={HealthCare} alt="Doctor Consultation" className="max-w-full h-6 mb-1" />
-                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Services</span>
 
+                  <a href="/" className="w-full focus:text-royal hover:text-royal flex flex-col items-center justify-center text-center pt-2 pb-1 hover:bg-white">
+                    <img src={HealthCare} alt="Services" className="max-w-full h-6 mb-1" />
+                    <span className="tab block text-xs" style={{ fontSize: '0.60rem' }}>Services</span>
                   </a>
                 </div>
               </section>
             </div>
+
+
 
           </div>
         </div>
@@ -236,7 +238,7 @@ export default function Header() {
             <img src={Call} alt="Doctor Consultation" className="max-w-full h-11 mb-1" />
           </a>
 
-          <a href="https://api.whatsapp.com/send?phone=+91 93117 91119&text=Hello%20send%20me%20Quotation%20for%20FullBody%20Checkup!" title="Share on WhatsApp" className="md:ml-2 mr-4">
+          <a href="https://api.whatsapp.com/send?phone=+91 93117 91119&text=Hello%20send%20me%20Quotation%20for%20FullBody%20Checkup!" title="Share on WhatsApp" target="blank" className="md:ml-2 mr-4">
             <img src={Whatsapp} alt="Doctor Consultation" className="max-w-full h-11 mb-1" />
           </a>
 

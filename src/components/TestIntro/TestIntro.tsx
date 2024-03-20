@@ -1,21 +1,38 @@
 // import React from 'react'
 // import img1 from '../../../public/testBanner.jpg';
 
+import { useState, useEffect } from "react";
+
 function TestIntro({ dataPackage }: { dataPackage: any }) {
+    const [description, setDescription] = useState("")
 
-const { price, discount } = dataPackage;
+    useEffect(() => {
+        // Update description only if it's not already set
+        if (!description && dataPackage.description) {
+            setDescription(dataPackage.description);
+        }
+    }, [description, dataPackage.description]);
 
-// Calculating selling price after discount
-let sellingPrice = price * (1 - discount / 100);
+    const { price, discount } = dataPackage;
 
-// Rounding selling price to the nearest whole amount
-const decimalPart = sellingPrice % 1;
-if (decimalPart >= 0 && decimalPart < 0.5) {
-    sellingPrice = Math.floor(sellingPrice);
-} else {
-    sellingPrice = Math.ceil(sellingPrice);
-}
+    // Calculating selling price after discount
+    let sellingPrice = price * (1 - discount / 100);
 
+    // Rounding selling price to the nearest whole amount
+    const decimalPart = sellingPrice % 1;
+    if (decimalPart >= 0 && decimalPart < 0.5) {
+        sellingPrice = Math.floor(sellingPrice);
+    } else {
+        sellingPrice = Math.ceil(sellingPrice);
+    }
+
+    let dis = description.split(",")
+
+    const schema = dis.reduce((acc: any, part, index) => {
+        acc[`${index + 1}`] = part.trim();
+        return acc;
+    }, {});
+    console.log(schema);
 
     // console.log("Selling price:", sellingPrice);
 
@@ -25,17 +42,17 @@ if (decimalPart >= 0 && decimalPart < 0.5) {
                 <div className="container md:m-10 mx-auto flex px-5 md:flex-row flex-col items-center justify-center">
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         <h1 className="title-font text sm:text-4xl text-3xl mb-4 font-medium text-white-900">
-                            {dataPackage.subTitle} &nbsp; 
+                            {dataPackage.subTitle} &nbsp;
                             {/* <span>{dataPackage.title}</span> */}
-                             <br className="hidden lg:inline-block" /> near you in delhi
+                            <br className="hidden lg:inline-block" /> Near you in Delhi
                         </h1>
                         <p className="mb-8 leading-relaxed">Thousand+ scans done & counting.. </p>
                         {/* <p className="mb-8 mt-2">{dataPackage.description}</p> */}
                         <p className="mb- leading-relaxed">Starting only @ </p>
                         <div className="flex items-center">
                             <p className="leading-relaxed text-3xl">&#8377;{sellingPrice}</p>
-                            <p >&nbsp; &nbsp; <span className=" text-xl line-through">&#8377;{dataPackage.price}</span></p>
-                            <p >&nbsp; &nbsp; <span className=" text-xl ">upto {dataPackage.discount}% discount</span></p>
+                            {/* <p >&nbsp; &nbsp; <span className=" text-xl line-through">&#8377;{dataPackage.price}</span></p>
+                            <p >&nbsp; &nbsp; <span className=" text-xl ">upto {dataPackage.discount}% discount</span></p> */}
 
                         </div>
                         <div className="flex justify-center">
@@ -51,8 +68,33 @@ if (decimalPart >= 0 && decimalPart < 0.5) {
             </section>
             {/* <p className="m-10 p-3 ">{dataPackage.description}</p> */}
 
+            <div className="lg:ml-6 lg:col-start-2 md:ml-20 lg:max-w-2xl mt-5 md:mb-2 p-4  justify-center " >
+                <p className="text-base font-bold leading-6 text-xl ml-10 mb-5 text-indigo-950  ">
+                    Test Included in {dataPackage.subTitle}
+                </p>
+                <ul className="mt-2 space-y-3 font-medium ml-10">
+
+                    {Object.entries(schema).map(([key, value]) => (
+                        <li className="flex items-start lg:col-span-1">
+                            <div className="flex-shrink-0">
+                                <svg className="w-5 h-5 text-indigo-800" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <p className="ml-3 leading-5 text-gray-800">
+                                <div key={key}>
+                                    <strong>{key}:</strong> {String(value)}
+                                </div>
+                            </p>
+                        </li>
+                          ))}
+                </ul>
+            </div>
+
             <h1 className="font-Proxima-Nova md:mt-10 md:ml-20 md:mb-2 p-4 sm:p-0 font-medium text-xl md:text-2xl pb-4 flex justify-left">
-               Available Lab List in Delhi
+                Available Lab List in Delhi
             </h1>
 
             {/* <blockquote className="relative ml-20 bg-white mb-2 p-3 border border-gray-400 m-1" style={{ width: "60%", border: "2px solid #4a90e2", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}>

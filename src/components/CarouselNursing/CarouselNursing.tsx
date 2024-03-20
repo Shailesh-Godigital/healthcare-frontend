@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import img1 from "/carousel-2.jpeg";
-// import img2 from "/homeNursing1.jpeg";
+import img7 from "/pic7.jpg";
+import img5 from "/pic5.jpg";
 // import img3 from "/homeNursing2.jpeg";
 
 function CarouselUtility({
@@ -82,7 +82,7 @@ function CarouselUtility({
 }
 
 export default function CarouselNursing() {
-  const slides = [img1];
+  const slides = [img7,img5];
 
   return (
     <div className=" w-full">

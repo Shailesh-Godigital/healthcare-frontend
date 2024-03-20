@@ -17,26 +17,27 @@ import BookConsultationForm from '../BookConsultationForm/BookConsultationForm';
 export default function Banner() {
   const posts = [
     {
+      title: "Dr. Zara Ahmed",
+      img: "DoctorImage3.jpeg",
+      content:
+        "MBBS (2016) DNB, EMERGENCY MEDICINE(JUNE 2020 SESSION), INDRAPRASTHA APOLLO HOSPITAL, DELHI ",
+      price: "999"
+    },
+    {
       title: "Dr. Vipin Kumar",
       img: '/DoctorImage1.jpeg',
       content:
-        "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT (EMERGENCY,TRAUMA & CRITICAL CARE)",
+        "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT",
       price: "499"
     },
     {
       title: " Dr. Mohd Faizan",
       img: 'DoctorImage2.jpeg',
       content:
-        "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida)  &nbsp;&nbsp;&nbsp;&nbsp; ",
+        "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida) ",
       price: "1499"
     },
-    {
-      title: "Dr. Satish Kumar",
-      img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      content:
-        "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place &nbsp;",
-      price: "999"
-    },
+   
 
   ];
 
@@ -113,8 +114,8 @@ export default function Banner() {
 
                                     <h1 className="px-2 text-sm">{items.location}</h1>
                                 </div> */}
-                <span className="relative flex items-center justify-center w-full text-xl m-2 items-bold h-full">Book  Consult Now</span>
-                <div className="flex flex-row sm:flex- space-y- sm:space-x-6 sm:space-y- m-4">
+                {/* <span className="relative flex items-center justify-center w-full text-xl m-2 items-bold h-full">Book  Consult Now</span> */}
+                {/* <div className="flex flex-row sm:flex- space-y- sm:space-x-6 sm:space-y- m-4">
                   <a href="#_" className="relative mr- inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group" onClick={openDialog}>
                     <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
                     <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
@@ -137,7 +138,24 @@ export default function Banner() {
                       <span className="tab block hidden md:block text-xs text-center" style={{ fontSize: '0.60rem' }}>Home </span>
                     </span>
                   </a>
-                </div>
+                </div> */}
+                {/* <button
+                  onClick={openDialog}
+                  className="px-5 py-3 text-sm border-blue-600 bg-blue-600 rounded shadow text-white"
+                >
+                  Book Video Consult
+                </button> */}
+                <button onClick={openDialog} className="relative mt-2 inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-indigo-900 transition duration-300 ease-out border-2 border-indigo-900 rounded-full shadow-md group ">
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-indigo-900 group-hover:translate-x-0 ease">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </span>
+                  <span className="absolute  flex items-center justify-center w-full h-full text-indigo-900 transition-all duration-300 transform group-hover:translate-x-full ease   "  > Consult Now</span>
+                  <span className="relative invisible">Button Text</span>
+                </button>
+
+
 
               </div>
             </div>
@@ -154,14 +172,14 @@ export default function Banner() {
                 onClick={closeDialog}
               ></div>
             </div>
-      
+
             <span
               className="hidden sm:inline-block sm:align-middle sm:h-screen"
               aria-hidden="true"
             >
               &#8203;
             </span>
-      
+
             <div
               className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
               role="dialog"
@@ -173,7 +191,7 @@ export default function Banner() {
           </div>
         </div>
       )}
-      
+
     </>
   );
 }

@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import imgUrl from "../../../public/logo.jpg";
+// import imgUrl from "../../../public/logo.jpg";
 export default function Profile() {
     return (
         <>
@@ -11,7 +11,7 @@ export default function Profile() {
                             <img
                                 alt="..."
                                 // src={require("../../../public/logo.jpg").default}
-                                src={imgUrl}
+                                src="/finallogo24.jpg"
                                 className="shadow-xl mt-1 rounded-half h-20 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-100-px"
                             />
                         </div>
@@ -27,7 +27,7 @@ export default function Profile() {
                         </h3>
                         <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                             <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>{" "}
-                            Noida, India
+                            New Delhi, India
                         </div>
                         <div className="mb-2 text-blueGray-600 mt-10">
                             <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>

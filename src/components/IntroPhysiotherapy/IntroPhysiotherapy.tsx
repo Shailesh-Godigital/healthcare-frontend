@@ -5,13 +5,13 @@ function IntroSurgeyPlanning() {
     return (
         <>
 
-            <div className="flex flex-col sm:flex-row bg-cover bg-center" style={{ backgroundImage: "url('https://aceheartinstitute.com/wp-content/uploads/2022/05/Physiotherapy.jpg')" }}>
+            <div className="flex flex-col sm:flex-row bg-cover bg-center" style={{ backgroundImage: "url('Physiotherapy1.jpg')" }}>
                 {/* <div className="absolute inset-0 bg-black opacity-0"></div> */}
                 {/* Content Section */}
-                <div className="p-6 relative sm:p-12 md:p-24 sm:w-1/2 ml-8">
+                <div className="p-7 relative sm:p-12 mt-10 text-white md:p-24 sm:w-1/2 ml-8">
                     <h1 className="text-2xl md:text-4xl font-bold mb-4 sm:text-xl">MYDR24 PHYSIOTHERAPIST CENTER</h1>
                     <h2 className="text-xl">Embrace Freedom of Movement with the Power of Physio</h2>
-                    <ul className="list-disc mb-4 m-4">
+                    <ul className="list-disc mb-4 m-4 text-xl">
                         <li>1000+ experienced nurses</li>
                         <li>100% court & criminal verified</li>
                         <li>Minimum 5 yrs Hospital & Critical care experience</li>

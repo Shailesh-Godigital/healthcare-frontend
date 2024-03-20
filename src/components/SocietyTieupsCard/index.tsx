@@ -1,0 +1,1 @@
+export {default as SocietyTieupsCard} from './SocietyTieupsCard'

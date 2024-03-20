@@ -111,6 +111,7 @@ function DoctorRegistrationForm() {
                 email: '',
                 contactNumber: ''
             });
+            window.location.reload();
         } catch (error) {
             console.error('Error saving data:', error);
         }
@@ -314,7 +315,7 @@ function DoctorRegistrationForm() {
                                     </label>
                                     <Selectmulti
                                         options={specializationOptions as any}
-                                        // value={formData.specialization}
+                                        // value={formData.specialization.value}
                                         onChange={handleSpecializationChange}
                                         name="specialization"
                                     />

@@ -64,8 +64,8 @@ export default function Banner() {
 
                                     <h1 className="px-2 text-sm">{items.location}</h1>
                                 </div>
-                                <span className="relative flex items-center justify-center w-full text-xl m-2  h-full">Book  Consult Now</span>
-                                <div className="flex flex-row sm:flex- space-y- sm:space-x-6 sm:space-y- m-4">
+                                {/* <span className="relative flex items-center justify-center w-full text-xl m-2  h-full">Book  Consult Now</span> */}
+                                {/* <div className="flex flex-row sm:flex- space-y- sm:space-x-6 sm:space-y- m-4">
                                     <a href="#_" className="relative mr-2 inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group">
                                         <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
                                         <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
@@ -87,7 +87,7 @@ export default function Banner() {
                                             <span className="tab block text-xs hidden md:block text-center" style={{ fontSize: '0.60rem' }}>Home </span>
                                         </span>
                                     </a>
-                                </div>
+                                </div> */}
 
 
 

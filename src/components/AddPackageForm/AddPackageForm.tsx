@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 interface UserData {
-    [x: string]: any;
+    // [x: string]: any;
     _id: string;
     title: string;
     subTitle: string;
@@ -23,7 +23,7 @@ export default function AddPackageForm({ packageData }: EditLabformProps) {
         title: packageData.title || '',
         subTitle: packageData.subTitle || '',
         price: packageData.price || '',
-        discount: packageData.discount || '',
+        discount: packageData.discount || '0',
         description: packageData.description || ''
     });
     console.log("Form dats",formData);
@@ -152,7 +152,7 @@ export default function AddPackageForm({ packageData }: EditLabformProps) {
 
 
                         </div>
-                        <div className="flex flex-wrap">
+                        {/* <div className="flex flex-wrap">
                             <div className="w-full lg:w-6/12 px-4">
                                 <div className="relative w-full mb-3">
                                     <label
@@ -173,7 +173,7 @@ export default function AddPackageForm({ packageData }: EditLabformProps) {
                             </div>
 
 
-                        </div>
+                        </div> */}
                         <div className="flex flex-wrap">
                             <div className="w-full lg:w-6/12 px-4">
                                 <div className="relative w-full mb-3">

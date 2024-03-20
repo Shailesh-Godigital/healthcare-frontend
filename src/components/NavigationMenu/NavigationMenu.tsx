@@ -26,7 +26,7 @@ interface vendorData {
 }
 
 export default function navigationMenu() {
-  
+
   const [vendorData, setVendorData] = useState<vendorData[]>([]);
 
   const fetchVendorData = async () => {
@@ -53,7 +53,7 @@ export default function navigationMenu() {
             item.contents.length ? (
               <NavigationMenuItem key={index}>
                 <NavigationMenuTrigger>
-                  <a href={item.href}>{item.title}</a>
+                  {item.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3  lg:w-[1070px] lg:grid-cols-[1fr_1fr]">
@@ -61,7 +61,7 @@ export default function navigationMenu() {
                       <NavigationMenuLink asChild>
                         <a
                           className="flex h-full w-full select-none flex-col  rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href={item.href}
+                        // href={item.href}
                         >
                           <img src={item.imgurl} className="rounded-lg" />
                           <div className="mb-2 mt-4 text-lg font-medium">
@@ -74,15 +74,15 @@ export default function navigationMenu() {
                       </NavigationMenuLink>
                     </li>
                     <div className="grid gap-3 p-2 lg:w-[780px] lg:grid-cols-[repeat(auto-fill,minmax(180px,1fr))]">
-                    {Array.isArray(item.contents) &&
-    item.contents.map((content: { href: any; title: string | undefined }, index: React.Key | null | undefined) => (
-                        <div key={index} className="col-span-1">
-                          <ListItem
-                            href={`${item.href}/${content.href}`}
-                            title={content.title}
-                          ></ListItem>
-                        </div>
-                      ))}
+                      {Array.isArray(item.contents) &&
+                        item.contents.map((content: { href: any; title: string | undefined }, index: React.Key | null | undefined) => (
+                          <div key={index} className="col-span-1">
+                            <ListItem
+                              href={`${item.href}/${content.href}`}
+                              title={content.title}
+                            ></ListItem>
+                          </div>
+                        ))}
                     </div>
                   </ul>
                 </NavigationMenuContent>

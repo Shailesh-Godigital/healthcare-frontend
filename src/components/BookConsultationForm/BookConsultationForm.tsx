@@ -24,7 +24,7 @@ function BookConsultationForm() {
                                 <textarea id="message" name="message"
                                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
                             </div> */}
-                        <button className=" py-2 px-5   md:py-3 md:px-6 bg-blue-700 hover:bg-blue-600 font-bold text-white md:text-lg rounded-lg shadow-md">
+                        <button className=" py-2 px-5   md:py-3 md:px-6 bg-indigo-900 hover:bg-indigo-900 font-bold text-white md:text-lg rounded-lg shadow-md">
                             Book An Appointment
                         </button>
                     </form>

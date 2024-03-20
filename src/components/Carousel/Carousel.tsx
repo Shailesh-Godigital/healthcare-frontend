@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import img1 from "/carousel-1.jpeg";
-import img2 from "/carousel-2.jpeg";
-import img3 from "/carousel-3.jpeg";
-import img4 from "/carousel-4.jpeg";
+import img1 from "/pic1.jpg";
+import img2 from "/pic2.jpg";
+import img3 from "/pic3.jpg";
+import img4 from "/pic4.jpg";
+import img5 from "/pic5.jpg";
+import img6 from "/pic6.jpg";
+import img7 from "/pic7.jpg";
+import img8 from "/pic8.jpg";
+import img9 from "/pic9.jpg";
+import img10 from "/pic10.jpg";
 
 function CarouselUtility({
   autoSlide = true,
@@ -40,7 +46,7 @@ function CarouselUtility({
             className="w-full md:w-screen sm:w-full"
             style={{ flex: "0 0 auto", width: "100%" }}
           >
-            <a >
+            {/* <a > */}
             <img
               src={img}
               alt={img}
@@ -48,7 +54,7 @@ function CarouselUtility({
               style={{ display: "block" }}
               
             />
-            </a>
+            {/* </a> */}
           </div>
         ))}
       </div>
@@ -86,14 +92,14 @@ function CarouselUtility({
 }
 
 export default function Carousel() {
-  const slides = [img1, img2, img3, img4];
+  const slides = [img1, img2, img3, img4,img5,img6,img7,img8,img9,img10];
 
   return (
     <div className="pb-8 w-full">
       <div>
-        <a  href="tel:+91 93117 91119" title="Call us">
+        {/* <a  href="tel:+91 93117 91119" title="Call us"> */}
         <CarouselUtility slides={slides} />
-        </a>
+        {/* </a> */}
       </div>
     </div>
   );

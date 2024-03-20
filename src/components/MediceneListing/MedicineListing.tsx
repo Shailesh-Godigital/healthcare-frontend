@@ -41,7 +41,7 @@ const products = [
 export default function MedicineListing() {
   return (
     <>
-      <a href="tel:+91 93117 91119" title="Call us">
+      <a href="https://api.whatsapp.com/send?phone=+91 93117 91119&text=Hello%20send%20me%20Quotation!" >
         <div className="text-center p-5 mt-5">
           <h1 className="font-bold text-2xl ">Shop By Category
           </h1>
@@ -51,7 +51,7 @@ export default function MedicineListing() {
           className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-5 mb-5">
           {products.map((items) => (
             <div className="w-62 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-              <a href="tel:+91 93117 91119" title="Call us">
+              <a href="https://api.whatsapp.com/send?phone=+91 93117 91119&text=Hello%20send%20me%20Quotation!" >
                 <img src={items.imageSrc}
                   alt="Product" className="h-40 w-72 object-cover rounded-t-xl" />
                 <div className="px-4 py-3 w-72">

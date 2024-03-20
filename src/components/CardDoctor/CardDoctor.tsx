@@ -1,27 +1,28 @@
-
+import BookConsultationForm from '../BookConsultationForm/BookConsultationForm';
+import { useState } from 'react';
 function CardDoctor() {
     const Doctors = [
         {
-            title: "Dr. Vipin Kumar",
-            img:'../../../public/DoctorImage1.jpeg',
+            title: "Dr. Zara Ahmed",
+            img: "DoctorImage3.jpeg",
             content:
-              "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT (EMERGENCY,TRAUMA & CRITICAL CARE)",
-            price: "499"
-          },
-          {
-            title: " Dr. Mohd Faizan",
-            img:  '../../../public/DoctorImage2.jpeg',
-            content:
-              "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida)   ",
-            price: "1499"
-          },
-          {
-            title: "Dr. Satish Kumar",
-            img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            content:
-              "Experienced General Surgeon in Ajmeri-Gate, Azad-Nagar, Bengali-Market, Central-Secretariat, Chanakya-Puri, Connaught-Place",
+                "MBBS (2016) DNB, EMERGENCY MEDICINE(JUNE 2020 SESSION), INDRAPRASTHA APOLLO HOSPITAL, DELHI ",
             price: "999"
-          },
+        },
+        {
+            title: "Dr. Vipin Kumar",
+            img: '/DoctorImage1.jpeg',
+            content:
+                "MBBS,DNB-EM (Apollo Hospital,New Delhi),MNAMS FACEE(AIIMS,NEW DELHI),FAGE CONSULTANT",
+            price: "499"
+        },
+        {
+            title: " Dr. Mohd Faizan",
+            img: 'DoctorImage2.jpeg',
+            content:
+                "Degree: BPT (TMU), CCT, CDNT Physiotherapist, Place- Muscle stretch sports injuries and pain Clinic (Noida) ",
+            price: "1499"
+        },
         // {
         //   title: "React Tailwind Card with Grid 4",
         //   img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
@@ -29,6 +30,18 @@ function CardDoctor() {
         //     "react tailwind css card with image It is a long established fact that a reader will be distracted by the readable content",
         // },
     ];
+
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+
+    const openDialog = () => {
+        setIsDialogOpen(true);
+    };
+
+    const closeDialog = () => {
+        setIsDialogOpen(false);
+    };
+
     return (
         <>
             <div className="flex  flex-col sm:flex-row  ">
@@ -36,7 +49,7 @@ function CardDoctor() {
                 <div className=" sm:p-12 md:p-24 sm:w-full w-full">
                     {/* <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Trust Accufly for Nursing Services</h1> */}
                     <div>
-                        <p className="font-Proxima-Nova font-medium text-2xl md:text-3xl text-center">
+                        <p className="font-Proxima-Nova font-medium text-2xl md:text-3xl text-center ">
                             Top Doctors Available
                         </p>
                         {
@@ -60,14 +73,14 @@ function CardDoctor() {
                                             </div>
                                             <div className=" p-2 ml-5">
                                                 <div className="sm:flex sm:justify-between">
-                                                    <div>
+                                                    {/* <div>
                                                         <div className="text-lg text-gray-700">
                                                             <span className="text-gray-900 font-bold">Consultation fee </span>
                                                             <p> 	&#8377;{items.price}/-</p>
                                                         </div>
 
-                                                    </div>
-                                                    <button className="mt-3 py-2 px-5 mt-9  md:py-3 md:px-6 bg-blue-700 hover:bg-blue-600 font-bold text-white md:text-lg rounded-lg shadow-md">
+                                                    </div> */}
+                                                    <button onClick={openDialog} className="mt-3 py-2 px-5 mt-9  md:py-3 md:px-6 bg-indigo-700 hover:bg-indigo-600 font-bold text-white md:text-lg rounded-lg shadow-md">
                                                         Book An Appointment
                                                     </button>
                                                 </div>
@@ -107,13 +120,41 @@ function CardDoctor() {
                                 <textarea id="message" name="message"
                                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
                             </div> */}
-                            <button className=" py-2 px-5   md:py-3 md:px-6 bg-blue-700 hover:bg-blue-600 font-bold text-white md:text-lg rounded-lg shadow-md">
+                            <button onClick={openDialog} className=" py-2 px-5   md:py-3 md:px-6 bg-indigo-700 hover:bg-indigo-600 font-bold text-white md:text-lg rounded-lg shadow-md">
                                 Book An Appointment
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
+            {isDialogOpen && (
+                <div className="fixed inset-0 z-10 overflow-y-auto">
+                    <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                        <div className="fixed inset-0 transition-opacity">
+                            <div
+                                className="absolute inset-0 bg-gray-500 opacity-75"
+                                onClick={closeDialog}
+                            ></div>
+                        </div>
+
+                        <span
+                            className="hidden sm:inline-block sm:align-middle sm:h-screen"
+                            aria-hidden="true"
+                        >
+                            &#8203;
+                        </span>
+
+                        <div
+                            className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledby="modal-headline"
+                        >
+                            <BookConsultationForm />
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     )
 }
