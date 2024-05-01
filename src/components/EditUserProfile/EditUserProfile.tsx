@@ -50,9 +50,11 @@ export default function EditLabform({ userData }: EditLabformProps) {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
                 email: formData.email,
-                role: formData.role,
+                role: formData.role || "user",
                 password: `${formData.firstName}@1234`,
-                status: "pending"
+                // status: "pending"
+                status: formData.role == "superAdmin" ? 'approved' : 'pending'
+
             }
             console.log("🚀 ~ handleSubmit ~ newUser:", newUser)
 
@@ -94,7 +96,8 @@ export default function EditLabform({ userData }: EditLabformProps) {
             // Update the form data with the response data
             setFormData(response.data);
 
-            alert('Thank you for submitting your form.');
+            alert(`Thank you for submitting your form!\nEmail: ${newUser.email}\nPassword: ${newUser.password}`);
+
             window.location.reload();
 
         } catch (error) {
@@ -107,9 +110,12 @@ export default function EditLabform({ userData }: EditLabformProps) {
     const handleEdit = async (status: string) => {
         try {
             let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/users/update/${userData._id}`;
+            console.log(formData);
 
             // Include the status in the formData
             const updatedFormData = { ...formData, status };
+            console.log(updatedFormData);
+
 
             let response = await axios.put(apiUrl, updatedFormData);
             console.log(response.data);

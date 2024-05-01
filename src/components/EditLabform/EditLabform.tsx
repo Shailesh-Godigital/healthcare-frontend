@@ -52,6 +52,8 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
 
 
     const handleEdit = async (status: string) => {
+        console.log(formData);
+
         try {
             let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/labVender/update/${vendorData._id}`;
             let apiUrlUser = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/auth/register`;
@@ -70,12 +72,14 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
                     role: "labVendor",
                     password: `${trimmedFirstName}@1234`,
                     status: "approved",
-                    labId:updatedFormData.id
+                    labId: updatedFormData.id
                 };
                 console.log("🚀 ~ handleEdit ~ newUser:", newUser)
 
                 // Use a different variable for the response from user registration
                 let userResponse = await axios.post(apiUrlUser, newUser);
+                alert(`Thank you for submitting your form!\nEmail: ${newUser.email}\nPassword: ${newUser.password}\nPlease share the login credential to ${newUser.role} `);
+
                 console.log(userResponse.data);
             }
 
@@ -99,24 +103,27 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
 
 
 
-    // const handleSubmit = async () => {
+    const handleSubmit = async () => {
+  
+        // Displaying an alert with the filled details
+        alert("Thank you for submitting your form. It is under review.");
 
-    //     // Displaying an alert with the filled details
-    //     alert("Thank you for submitting your form. It is under review.");
+        try {
+            console.log(formData);
+            // let apiUrl = `${process.env.REACT_APP_BASE_URL}/api/v1/labVender/register`;
+            const registerForm = { ...formData, status: "approved" };
 
-    //     try {
-    //         console.log(formData);
-    //         // let apiUrl = `${process.env.REACT_APP_BASE_URL}/api/v1/labVender/register`;
-    //         let apiUrl = `http://localhost:5000/api/v1/labVender/register`;
+            console.log("🚀 ~ handleSubmit ~ registerForm:", registerForm)
+            let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/labVender/register`;
 
-    //         let response = await axios.post(apiUrl, formData);
-    //         console.log(response.data);
+            let response = await axios.post(apiUrl, formData);
+            console.log(response.data);
 
-    //     } catch (error) {
-    //         console.error('Error saving data:', error);
-    //     }
+        } catch (error) {
+            console.error('Error saving data:', error);
+        }
 
-    // };
+    };
 
 
 
@@ -358,7 +365,7 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
                             ) : (
                                 <button
                                     type="button"
-                                    onClick={() => handleEdit("pending")}
+                                    onClick={() => handleSubmit()}
                                     className="bg-green-500 text-white active:bg-green-800 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                                 >
                                     Add
