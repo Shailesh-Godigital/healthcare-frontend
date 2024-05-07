@@ -109,9 +109,14 @@ export default function Footer() {
                             </div>
 
                             <div className="text-center sm:text-left">
-                                <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                               <a href="tel:+91 93117 91119" title="Call us"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline" >+91 93117 91119</span></a>
-                               <a href="mailto:customercare@mydr24.com"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">customercare@mydr24.com</span></a>
+                                {/* <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3> */}
+                               {/* <a href="tel:+91 93117 91119" title="Call us"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline" >+91 93117 91119</span></a> */}
+                               <a href="/contactUs"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Contact Us</span></a>
+                               <a href="/privacyPolicies"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Privacy Policies</span></a>
+                               <a href="/refund-policy"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Refund & Return Policy</span></a>
+                               <a href="/terms-conditions"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Terms & Conditions</span></a>
+                               <a href="/shipping-policy"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Shipping and Delivery Policy</span></a>
+                               {/* <a href="mailto:customercare@mydr24.com"> <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">customercare@mydr24.com</span></a> */}
                             </div>
                         </div>
                     </div>

@@ -17,9 +17,8 @@ function Contact() {
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
 
-                                    <span className="mx-2 text-gray-700 truncate w-72 dark:text-gray-400">
-                                        Cecilia Chapman 711-2880 Nulla
-                                        St. Mankato Mississippi 96522
+                                    <span className="mx-2 text-gray-700  w-72 dark:text-gray-400">
+                                    Cn/29 Hauz Rani Malviya nagar south delhi 110017 Opposite Max Hospital Saket
                                     </span>
                                 </p>
 

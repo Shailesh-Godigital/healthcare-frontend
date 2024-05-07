@@ -1,3 +1,4 @@
+import { components } from "react-select";
 import * as reviews from "../pages";
 
 const routeData = [
@@ -215,6 +216,41 @@ const routeData = [
     id: "route-024",
     path: "/surgery",
     component: reviews.SurgeryPage,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-024",
+    path: "/analytics",
+    component: reviews.AnalyticsPage,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-025",
+    path: "/privacyPolicies",
+    component: reviews.PrivacyPolicies,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-026",
+    path: "/refund-policy",
+    component: reviews.RefundPage,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-026",
+    path: "/terms-conditions",
+    component: reviews.TermsAndConditionPage,
+    requiresAuth: false,
+    roles: [],
+  },
+  {
+    id: "route-026",
+    path: "/shipping-policy",
+    component: reviews.ShippingPolicyPage,
     requiresAuth: false,
     roles: [],
   },

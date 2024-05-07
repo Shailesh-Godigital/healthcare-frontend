@@ -8,6 +8,7 @@ import profile from '../../../public/profile.png'
 import invoice from '../../../public/invoice.png'
 import booking from '../../../public/booking.png'
 import doctor from '../../../public/doctornew.png'
+import anylitics from '../../../public/analytics.png'
 // import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 // import { Card } from '../ui/card'
@@ -23,11 +24,13 @@ export default function DashboardCard() {
         { id: 102, name: 'Packages', image: packagelogo, link: '/package', roles: ['superAdmin'] },
         { id: 103, name: 'Profile', image: profile, link: '/profile', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 104, name: 'User Management', image: userManagement, link: '/userManagement', roles: ['superAdmin', 'labVendor'] },
+        { id: 109, name: 'Analytics', image: anylitics, link: '/analytics', roles: ['superAdmin', 'labVendor'] },
         { id: 111, name: 'Reports', image: reports, link: '/reports', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 105, name: 'Invoice', image: invoice, link: '/invoice', roles: ['superadmin', 'admin'] },
         { id: 106, name: 'Payment', image: payment, link: '/payment', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 107, name: 'Support', image: support, link: '/support', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 108, name: 'Bookings', image: booking, link: '/booking', roles: ['superAdmin', 'labVendor', 'user'] },
+       
 
     ];
 

@@ -104,19 +104,21 @@ export default function EditLabform({ vendorData }: EditLabformProps) {
 
 
     const handleSubmit = async () => {
-  
+
         // Displaying an alert with the filled details
+        
         alert("Thank you for submitting your form. It is under review.");
 
         try {
-            console.log(formData);
-            // let apiUrl = `${process.env.REACT_APP_BASE_URL}/api/v1/labVender/register`;
-            const registerForm = { ...formData, status: "approved" };
+            const { id, ...registerForm } = formData;
+            registerForm.status = "approved"; // Adding 'status' property to the registerForm constant
+
+            console.log(registerForm);
 
             console.log("🚀 ~ handleSubmit ~ registerForm:", registerForm)
             let apiUrl = `${import.meta.env.VITE_REACT_APP_BASE_URL}/api/v1/labVender/register`;
 
-            let response = await axios.post(apiUrl, formData);
+            let response = await axios.post(apiUrl, registerForm);
             console.log(response.data);
 
         } catch (error) {

@@ -27,6 +27,7 @@ export default function Sidebar() {
         { id: 102, name: 'Packages', link: '/Package', roles: ['superAdmin'] },
         { id: 103, name: 'Profile', link: '/profile', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 104, name: 'User Management', link: '/userManagement', roles: ['superAdmin', 'labVendor'] },
+        { id: 109, name: 'Analytics', link: '/analytics', roles: ['superAdmin', 'labVendor'] },
         { id: 111, name: 'Reports', link: '/reports', roles: ['superAdmin', 'labVendor', 'user'] },
         { id: 105, name: 'Invoice', link: '/invoice', roles: ['superadmin', 'admin'] },
         { id: 106, name: 'Payment', link: '/payment', roles: ['superAdmin', 'labVendor', 'user'] },
